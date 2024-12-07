@@ -1,5 +1,5 @@
 # W10-W11CleanInstall
-Scripts/resources for EXPERIMENTAL Windows10/11 clean installation
+Scripts/resources for EXPERIMENTAL Windows10/11 clean installation. Please refreain from using these for the time being.
 
 ## Screenshots will be added for documenting the changes.
 When I have the time...
