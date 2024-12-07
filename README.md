@@ -5,7 +5,7 @@ Scripts/resources for EXPERIMENTAL Windows10/11 clean installation. Please refre
 When I have the time...
 
 ## What is this repository?
-This repo contains scripts/resources for clean, bloatfree, and customized Windows 10/Windows 11 installations.
+This repo (will) contains scripts/resources for clean, bloatfree, and customized Windows 10/Windows 11 installations.
 
 ### Using Memory's [UnattendedWinstall](https://github.com/memstechtips/UnattendedWinstall) answer file as a base;
   * Integrated [FR33THY's Remove Edge script](https://github.com/FR33THYFR33THY/Ultimate-Windows-Optimization-Guide/blob/main/6%20Windows/14%20Edge.ps1) - will remove Edge upon installation. No fuss.
