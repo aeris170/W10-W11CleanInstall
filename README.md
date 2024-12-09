@@ -27,22 +27,26 @@ This repo (will) contains scripts/resources for clean, bloatfree, and customized
   * Taskbar Search bar will not be removed, instead will be made an icon.
   * Taskview button on Taskbar will not be hidden.
   * Added two cursor sets. You can browse them at [W10-W11CleanInstall/Resources/Cursors/](https://github.com/aeris170/W10-W11CleanInstall/Resources/Cursors). Default cursor will be [Obsidian](https://www.deviantart.com/teft/art/Obsidian-Cursor-set-78972293) by [teft](https://www.deviantart.com/teft/gallery).
-  * ... and other stuff I fail to remember at the moment. Nothing malicious. You should still diff the original with mine. You can use an online tool or use a program like Meld.
-
-> [!WARNING]
-Please make sure you have internet during installation. Resources folder will be downloaded. If they couldn't be downloaded during installation, launch "Download Resources" from desktop.
+  * ... and possibly other stuff I failed to remember. Nothing malicious. You should still diff the original with mine. You can use an online tool or use a program like Meld.
+> [!WARNING]  
+> Definitely diff! No one but you is responsible if your break anything. We will laugh at you if you break your setup and come complaining in the issues!
 
 ### How to use?
   Follow [UnattendedWinstall](https://github.com/memstechtips/UnattendedWinstall).
+> [!IMPORTANT]
+Please make sure you have internet during installation. Resources folder will be downloaded.
+
+> [!TIP]
+If you can't/won't have internet druing installation, you can launch "Download Resources" from desktop after logging in.
 
 ### License - usage rights?
   Use this in any way you desire. You must give credit to [Memory](https://github.com/memstechtips), [FR33THY](https://github.com/FR33THYFR33THY), [catppuccin](https://github.com/catppuccin). If you are able to, also give credit to [aeris170 (me)](https://github.com/aeris170).
 
 #### YOUR Favoutire Software(s)?
-> [!INFO]
-The list below is planned to be the final list. The current autoattend.xml does not include all those below. autoattend.xml includes some other programs unmentioned below. This will be fixed soon.
+> [!NOTE]
+The list below is planned to be the final list — tentative. The current autoattend.xml does not include all those below. autoattend.xml includes some other programs unmentioned below. This will be fixed soon.
 
-Yes, all via winget 😏 you have the option to select. Don't like some? Don't install those.
+Yes, all via winget 😏 you have the option to select which. Don't like some? Don't install those.
   * **7zip**
   * **Auto Hotkey**
   * **Battle.net**
@@ -54,30 +58,45 @@ Yes, all via winget 😏 you have the option to select. Don't like some? Don't i
   * **Flawless Widescreen**
   * **GIMP**
   * **Git**
+> [!NOTE]  
+> Git will be installed in "interactive mode". Make sure to have your "favourite" text editor installed.
   * **GitHub Desktop**
   * **Google Drive**
   * **HiBit Uninstaller**
   * **HWiNFO**
   * **Runescape**
   * **K-Lite Codec Pack Mega**
+> [!CAUTION]
+> K-Lite Codec Pack gives out a warning if it can't find GPU drivers. You may have performance issues. Please install your GPU driver before installing K-Lite Codec Pack!! This warning is invisible during silent installation through winget, but it's still there!
   * **Libre Office**
   * **LibreWolf**
   * **Line 6 Central**
   * **Microsoft Teams**
   * **Neofetch**
   * **Nilesoft Shell**
-	* To remove excess Powershell and CMD buttons, run C:\Windows\Setup\Scripts\RemoveCMD_Pwsh.reg
-	* To apply my custom changes with a matching theme (edited [catppuccin mocha yellow](https://github.com/catppuccin/nilesoft-shell)), run
-    ```
-    powershell C:\Windows\Setup\Scripts\ApplyNilesoftConfig.ps1 # (this will remove excess buttons)
-    ```
-	* You will need to Ctrl+Rightlick Desktop to apply changes
+> [!IMPORTANT]
+> Nilesoft comes with it's own Terminal tab. Thefore CMD and pwsh options will have duplicates. You can run
+> ```
+> regedit /S C:\Windows\Setup\Scripts\RemoveCMD_Pwsh.reg
+> ```
+> to clean-up context menu.
+
+> [!TIP]
+> You can also apply my own custom changes very easily:
+>  * A matching theme (edited [catppuccin mocha yellow](https://github.com/catppuccin/nilesoft-shell))
+>  * Cleaned-up context menu
+>  To apply, run:
+>  ``` 
+>  powershell C:\Windows\Setup\Scripts\ApplyNilesoftConfig.ps1
+>  ```
+> 
+>  * You will need to Ctrl+Rightlick Desktop to apply changes
   * **Notepad++**
   * **NVCleanstall**
   * **Paint.net**
   * **PowerToys**
   * **PuTTY (SSH Client)**
-  * **qBittorrent**
+  * **qBittorrent (Qt6)**
   * **Rainmeter**
   * **Razer Synapse 3**
   * **RenderDoc**
@@ -97,20 +116,21 @@ Yes, all via winget 😏 you have the option to select. Don't like some? Don't i
   * **Oracle VM Virtual Box**
   * **WinDirStat**
   * **Windhawk**
-    * My preferred mods:
-      * Always show all taskbar tray icons
-      * Middle click to close on the taskbar
-      * Modernize Folder Picker Dialog
-      * Slick Window Arrangement
-      * Taskbar Clock Customization - Two Lines Format:
-        * **Monday 15:28:29**
-        * **Dec 09.12.2024**
-      * Taskbar on top for Windows 11
-      * Taskbar tray system icon tweaks
-        * Hide Battery, GPS, Language bar, Bell
-    * To apply my preferred mods and their settings, run
-    ```
-    powershell C:\Windows\Setup\Scripts\ApplyWindhawkConfig.ps1
-    ```
-    * You may need to restart Windhawk
+> [!TIP]
+> You can apply my preferred mods very easily:
+>   * Always show all taskbar tray icons
+>   * Middle click to close on the taskbar
+>   * Modernize Folder Picker Dialog
+>   * Slick Window Arrangement
+>   * Taskbar Clock Customization - Two Lines Format:
+>     * **Monday 15:28:29**
+>     * **Dec 09.12.2024**
+>   * Taskbar on top for Windows 11
+>   * Taskbar tray system icon tweaks
+>     * Hide Battery, GPS, Language bar, Bell
+>   * To apply, run:
+>   ```
+>   powershell C:\Windows\Setup\Scripts\ApplyWindhawkConfig.ps1
+>   ```
+>   * You may need to restart Windhawk
   * **WinSCP (FTP Client)**
