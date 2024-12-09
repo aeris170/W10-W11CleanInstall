@@ -791,12 +791,12 @@
         <RunSynchronousCommand wcm:action="add">
           <Order>8</Order>
           <!-- Creates SoftwareInstallGUI Script Shortcut on Desktop -->
-          <Path>powershell.exe -NoProfile -WindowStyle Hidden -ExecutionPolicy Bypass -File "C:\Windows\Temp\SoftwareInstallerGUIShortcutCreator.ps1"</Path>
+          <Path>powershell.exe -NoProfile -WindowStyle Hidden -ExecutionPolicy Bypass -File "C:\Windows\Temp\DownloadResources_and_SoftwareInstallerGUIShortcutCreator.ps1"</Path>
         </RunSynchronousCommand>
 		<RunSynchronousCommand wcm:action="add">
           <Order>9</Order>
           <!-- Downloads necessary resources -->
-          <Path>powershell.exe -NoProfile -WindowStyle Hidden -ExecutionPolicy Bypass -File "C:\Windows\Temp\DownloadResources.ps1"</Path>
+          <Path>powershell.exe -NoProfile -WindowStyle Hidden -ExecutionPolicy Bypass -File "C:\Windows\Setup\Scripts\DownloadResources.ps1"</Path>
         </RunSynchronousCommand>
         <RunSynchronousCommand wcm:action="add">
           <Order>10</Order>
@@ -870,12 +870,12 @@
         <RunSynchronousCommand wcm:action="add">
           <Order>8</Order>
           <!-- Creates SoftwareInstallGUI Script Shortcut on Desktop -->
-          <Path>powershell.exe -NoProfile -WindowStyle Hidden -ExecutionPolicy Bypass -File "C:\Windows\Temp\SoftwareInstallerGUIShortcutCreator.ps1"</Path>
+          <Path>powershell.exe -NoProfile -WindowStyle Hidden -ExecutionPolicy Bypass -File "C:\Windows\Temp\DownloadResources_and_SoftwareInstallerGUIShortcutCreator.ps1"</Path>
         </RunSynchronousCommand>
 		<RunSynchronousCommand wcm:action="add">
           <Order>9</Order>
           <!-- Downloads necessary resources -->
-          <Path>powershell.exe -NoProfile -WindowStyle Hidden -ExecutionPolicy Bypass -File "C:\Windows\Temp\DownloadResources.ps1"</Path>
+          <Path>powershell.exe -NoProfile -WindowStyle Hidden -ExecutionPolicy Bypass -File "C:\Windows\Setup\Scripts\DownloadResources.ps1"</Path>
         </RunSynchronousCommand>
         <RunSynchronousCommand wcm:action="add">
           <Order>10</Order>
@@ -949,12 +949,12 @@
         <RunSynchronousCommand wcm:action="add">
           <Order>8</Order>
           <!-- Creates SoftwareInstallGUI Script Shortcut on Desktop -->
-          <Path>powershell.exe -NoProfile -WindowStyle Hidden -ExecutionPolicy Bypass -File "C:\Windows\Temp\SoftwareInstallerGUIShortcutCreator.ps1"</Path>
+          <Path>powershell.exe -NoProfile -WindowStyle Hidden -ExecutionPolicy Bypass -File "C:\Windows\Temp\DownloadResources_and_SoftwareInstallerGUIShortcutCreator.ps1"</Path>
         </RunSynchronousCommand>
 		<RunSynchronousCommand wcm:action="add">
           <Order>9</Order>
           <!-- Downloads necessary resources -->
-          <Path>powershell.exe -NoProfile -WindowStyle Hidden -ExecutionPolicy Bypass -File "C:\Windows\Temp\DownloadResources.ps1"</Path>
+          <Path>powershell.exe -NoProfile -WindowStyle Hidden -ExecutionPolicy Bypass -File "C:\Windows\Setup\Scripts\DownloadResources.ps1"</Path>
         </RunSynchronousCommand>
         <RunSynchronousCommand wcm:action="add">
           <Order>10</Order>
@@ -2170,7 +2170,7 @@ Windows Registry Editor Version 5.00
 ; Add "Create .cpp and .hpp file" to the Right Click Context Menu for all Users
 [HKEY_CLASSES_ROOT\Directory\background\shell\CreateCppAndHpp]
 @="Create .cpp and .hpp file"
-"Icon"="C:\\Windows\\Setup\\Scripts\\cpp.ico"
+"Icon"="C:\\Windows\\Setup\\Resources\\Icons\\cpp.ico"
 
 [HKEY_CLASSES_ROOT\Directory\background\shell\CreateCppAndHpp\command]
 @="C:\\Windows\\Setup\\Scripts\\CreateCppHpp.bat"
@@ -2986,6 +2986,129 @@ Windows Registry Editor Version 5.00
 "AppsUseLightTheme"=dword:00000000    ; Apps mode [Dark]
 "SystemUsesLightTheme"=dword:00000000 ; Windows mode [Dark]
 "EnableTransparency"=dword:00000001   ; Transparency [x]
+
+; obsidian cursor
+[HKEY_CURRENT_USER\Control Panel\Cursors]
+"AppStarting"=hex(2):25,00,53,00,59,00,53,00,54,00,45,00,4d,00,52,00,4f,00,4f,\
+  00,54,00,25,00,5c,00,43,00,75,00,72,00,73,00,6f,00,72,00,73,00,5c,00,4f,00,\
+  62,00,73,00,69,00,64,00,69,00,61,00,6e,00,5c,00,77,00,6f,00,72,00,6b,00,69,\
+  00,6e,00,67,00,32,00,2e,00,61,00,6e,00,69,00,00,00
+"Arrow"=hex(2):25,00,53,00,59,00,53,00,54,00,45,00,4d,00,52,00,4f,00,4f,00,54,\
+  00,25,00,5c,00,43,00,75,00,72,00,73,00,6f,00,72,00,73,00,5c,00,4f,00,62,00,\
+  73,00,69,00,64,00,69,00,61,00,6e,00,5c,00,6e,00,6f,00,72,00,6d,00,61,00,6c,\
+  00,2e,00,63,00,75,00,72,00,00,00
+"ContactVisualization"=dword:00000001
+"Crosshair"=hex(2):25,00,53,00,59,00,53,00,54,00,45,00,4d,00,52,00,4f,00,4f,00,\
+  54,00,25,00,5c,00,43,00,75,00,72,00,73,00,6f,00,72,00,73,00,5c,00,4f,00,62,\
+  00,73,00,69,00,64,00,69,00,61,00,6e,00,5c,00,70,00,72,00,65,00,63,00,69,00,\
+  73,00,69,00,6f,00,6e,00,2e,00,63,00,75,00,72,00,00,00
+"CursorBaseSize"=dword:00000020
+"GestureVisualization"=dword:0000001f
+"Hand"=hex(2):25,00,53,00,59,00,53,00,54,00,45,00,4d,00,52,00,4f,00,4f,00,54,\
+  00,25,00,5c,00,43,00,75,00,72,00,73,00,6f,00,72,00,73,00,5c,00,4f,00,62,00,\
+  73,00,69,00,64,00,69,00,61,00,6e,00,5c,00,6c,00,69,00,6e,00,6b,00,2e,00,63,\
+  00,75,00,72,00,00,00
+"Help"=hex(2):25,00,53,00,59,00,53,00,54,00,45,00,4d,00,52,00,4f,00,4f,00,54,\
+  00,25,00,5c,00,43,00,75,00,72,00,73,00,6f,00,72,00,73,00,5c,00,4f,00,62,00,\
+  73,00,69,00,64,00,69,00,61,00,6e,00,5c,00,68,00,65,00,6c,00,70,00,2e,00,63,\
+  00,75,00,72,00,00,00
+"IBeam"=hex(2):25,00,53,00,59,00,53,00,54,00,45,00,4d,00,52,00,4f,00,4f,00,54,\
+  00,25,00,5c,00,43,00,75,00,72,00,73,00,6f,00,72,00,73,00,5c,00,4f,00,62,00,\
+  73,00,69,00,64,00,69,00,61,00,6e,00,5c,00,74,00,65,00,78,00,74,00,2e,00,63,\
+  00,75,00,72,00,00,00
+"No"=hex(2):25,00,53,00,59,00,53,00,54,00,45,00,4d,00,52,00,4f,00,4f,00,54,00,\
+  25,00,5c,00,43,00,75,00,72,00,73,00,6f,00,72,00,73,00,5c,00,4f,00,62,00,73,\
+  00,69,00,64,00,69,00,61,00,6e,00,5c,00,75,00,6e,00,61,00,76,00,61,00,69,00,\
+  6c,00,61,00,62,00,6c,00,65,00,2e,00,63,00,75,00,72,00,00,00
+"NWPen"=hex(2):25,00,53,00,59,00,53,00,54,00,45,00,4d,00,52,00,4f,00,4f,00,54,\
+  00,25,00,5c,00,43,00,75,00,72,00,73,00,6f,00,72,00,73,00,5c,00,4f,00,62,00,\
+  73,00,69,00,64,00,69,00,61,00,6e,00,5c,00,68,00,61,00,6e,00,64,00,77,00,72,\
+  00,69,00,74,00,69,00,6e,00,67,00,2e,00,63,00,75,00,72,00,00,00
+"Scheme Source"=dword:00000001
+"SizeAll"=hex(2):25,00,53,00,59,00,53,00,54,00,45,00,4d,00,52,00,4f,00,4f,00,\
+  54,00,25,00,5c,00,43,00,75,00,72,00,73,00,6f,00,72,00,73,00,5c,00,4f,00,62,\
+  00,73,00,69,00,64,00,69,00,61,00,6e,00,5c,00,6d,00,6f,00,76,00,65,00,2e,00,\
+  63,00,75,00,72,00,00,00
+"SizeNESW"=hex(2):25,00,53,00,59,00,53,00,54,00,45,00,4d,00,52,00,4f,00,4f,00,\
+  54,00,25,00,5c,00,43,00,75,00,72,00,73,00,6f,00,72,00,73,00,5c,00,4f,00,62,\
+  00,73,00,69,00,64,00,69,00,61,00,6e,00,5c,00,64,00,69,00,61,00,67,00,6f,00,\
+  6e,00,61,00,6c,00,32,00,2e,00,63,00,75,00,72,00,00,00
+"SizeNS"=hex(2):25,00,53,00,59,00,53,00,54,00,45,00,4d,00,52,00,4f,00,4f,00,54,\
+  00,25,00,5c,00,43,00,75,00,72,00,73,00,6f,00,72,00,73,00,5c,00,4f,00,62,00,\
+  73,00,69,00,64,00,69,00,61,00,6e,00,5c,00,76,00,65,00,72,00,74,00,69,00,63,\
+  00,61,00,6c,00,2e,00,63,00,75,00,72,00,00,00
+"SizeNWSE"=hex(2):25,00,53,00,59,00,53,00,54,00,45,00,4d,00,52,00,4f,00,4f,00,\
+  54,00,25,00,5c,00,43,00,75,00,72,00,73,00,6f,00,72,00,73,00,5c,00,4f,00,62,\
+  00,73,00,69,00,64,00,69,00,61,00,6e,00,5c,00,64,00,69,00,61,00,67,00,6f,00,\
+  6e,00,61,00,6c,00,31,00,2e,00,63,00,75,00,72,00,00,00
+"SizeWE"=hex(2):25,00,53,00,59,00,53,00,54,00,45,00,4d,00,52,00,4f,00,4f,00,54,\
+  00,25,00,5c,00,43,00,75,00,72,00,73,00,6f,00,72,00,73,00,5c,00,4f,00,62,00,\
+  73,00,69,00,64,00,69,00,61,00,6e,00,5c,00,68,00,6f,00,72,00,69,00,7a,00,6f,\
+  00,6e,00,74,00,61,00,6c,00,2e,00,63,00,75,00,72,00,00,00
+"UpArrow"=hex(2):25,00,53,00,59,00,53,00,54,00,45,00,4d,00,52,00,4f,00,4f,00,\
+  54,00,25,00,5c,00,43,00,75,00,72,00,73,00,6f,00,72,00,73,00,5c,00,4f,00,62,\
+  00,73,00,69,00,64,00,69,00,61,00,6e,00,5c,00,61,00,6c,00,74,00,65,00,72,00,\
+  6e,00,61,00,74,00,65,00,2e,00,63,00,75,00,72,00,00,00
+"Wait"=hex(2):25,00,53,00,59,00,53,00,54,00,45,00,4d,00,52,00,4f,00,4f,00,54,\
+  00,25,00,5c,00,43,00,75,00,72,00,73,00,6f,00,72,00,73,00,5c,00,4f,00,62,00,\
+  73,00,69,00,64,00,69,00,61,00,6e,00,5c,00,62,00,75,00,73,00,79,00,32,00,2e,\
+  00,61,00,6e,00,69,00,00,00
+@="Obsidian"
+
+[HKEY_CURRENT_USER\Control Panel\Cursors\Schemes]
+"Obsidian"=hex(2):25,00,53,00,59,00,53,00,54,00,45,00,4d,00,52,00,4f,00,4f,00,\
+  54,00,25,00,5c,00,43,00,75,00,72,00,73,00,6f,00,72,00,73,00,5c,00,4f,00,62,\
+  00,73,00,69,00,64,00,69,00,61,00,6e,00,5c,00,6e,00,6f,00,72,00,6d,00,61,00,\
+  6c,00,2e,00,63,00,75,00,72,00,2c,00,25,00,53,00,59,00,53,00,54,00,45,00,4d,\
+  00,52,00,4f,00,4f,00,54,00,25,00,5c,00,43,00,75,00,72,00,73,00,6f,00,72,00,\
+  73,00,5c,00,4f,00,62,00,73,00,69,00,64,00,69,00,61,00,6e,00,5c,00,68,00,65,\
+  00,6c,00,70,00,2e,00,63,00,75,00,72,00,2c,00,25,00,53,00,59,00,53,00,54,00,\
+  45,00,4d,00,52,00,4f,00,4f,00,54,00,25,00,5c,00,43,00,75,00,72,00,73,00,6f,\
+  00,72,00,73,00,5c,00,4f,00,62,00,73,00,69,00,64,00,69,00,61,00,6e,00,5c,00,\
+  77,00,6f,00,72,00,6b,00,69,00,6e,00,67,00,32,00,2e,00,61,00,6e,00,69,00,2c,\
+  00,25,00,53,00,59,00,53,00,54,00,45,00,4d,00,52,00,4f,00,4f,00,54,00,25,00,\
+  5c,00,43,00,75,00,72,00,73,00,6f,00,72,00,73,00,5c,00,4f,00,62,00,73,00,69,\
+  00,64,00,69,00,61,00,6e,00,5c,00,62,00,75,00,73,00,79,00,32,00,2e,00,61,00,\
+  6e,00,69,00,2c,00,25,00,53,00,59,00,53,00,54,00,45,00,4d,00,52,00,4f,00,4f,\
+  00,54,00,25,00,5c,00,43,00,75,00,72,00,73,00,6f,00,72,00,73,00,5c,00,4f,00,\
+  62,00,73,00,69,00,64,00,69,00,61,00,6e,00,5c,00,70,00,72,00,65,00,63,00,69,\
+  00,73,00,69,00,6f,00,6e,00,2e,00,63,00,75,00,72,00,2c,00,25,00,53,00,59,00,\
+  53,00,54,00,45,00,4d,00,52,00,4f,00,4f,00,54,00,25,00,5c,00,43,00,75,00,72,\
+  00,73,00,6f,00,72,00,73,00,5c,00,4f,00,62,00,73,00,69,00,64,00,69,00,61,00,\
+  6e,00,5c,00,74,00,65,00,78,00,74,00,2e,00,63,00,75,00,72,00,2c,00,25,00,53,\
+  00,59,00,53,00,54,00,45,00,4d,00,52,00,4f,00,4f,00,54,00,25,00,5c,00,43,00,\
+  75,00,72,00,73,00,6f,00,72,00,73,00,5c,00,4f,00,62,00,73,00,69,00,64,00,69,\
+  00,61,00,6e,00,5c,00,68,00,61,00,6e,00,64,00,77,00,72,00,69,00,74,00,69,00,\
+  6e,00,67,00,2e,00,63,00,75,00,72,00,2c,00,25,00,53,00,59,00,53,00,54,00,45,\
+  00,4d,00,52,00,4f,00,4f,00,54,00,25,00,5c,00,43,00,75,00,72,00,73,00,6f,00,\
+  72,00,73,00,5c,00,4f,00,62,00,73,00,69,00,64,00,69,00,61,00,6e,00,5c,00,75,\
+  00,6e,00,61,00,76,00,61,00,69,00,6c,00,61,00,62,00,6c,00,65,00,2e,00,63,00,\
+  75,00,72,00,2c,00,25,00,53,00,59,00,53,00,54,00,45,00,4d,00,52,00,4f,00,4f,\
+  00,54,00,25,00,5c,00,43,00,75,00,72,00,73,00,6f,00,72,00,73,00,5c,00,4f,00,\
+  62,00,73,00,69,00,64,00,69,00,61,00,6e,00,5c,00,76,00,65,00,72,00,74,00,69,\
+  00,63,00,61,00,6c,00,2e,00,63,00,75,00,72,00,2c,00,25,00,53,00,59,00,53,00,\
+  54,00,45,00,4d,00,52,00,4f,00,4f,00,54,00,25,00,5c,00,43,00,75,00,72,00,73,\
+  00,6f,00,72,00,73,00,5c,00,4f,00,62,00,73,00,69,00,64,00,69,00,61,00,6e,00,\
+  5c,00,68,00,6f,00,72,00,69,00,7a,00,6f,00,6e,00,74,00,61,00,6c,00,2e,00,63,\
+  00,75,00,72,00,2c,00,25,00,53,00,59,00,53,00,54,00,45,00,4d,00,52,00,4f,00,\
+  4f,00,54,00,25,00,5c,00,43,00,75,00,72,00,73,00,6f,00,72,00,73,00,5c,00,4f,\
+  00,62,00,73,00,69,00,64,00,69,00,61,00,6e,00,5c,00,64,00,69,00,61,00,67,00,\
+  6f,00,6e,00,61,00,6c,00,31,00,2e,00,63,00,75,00,72,00,2c,00,25,00,53,00,59,\
+  00,53,00,54,00,45,00,4d,00,52,00,4f,00,4f,00,54,00,25,00,5c,00,43,00,75,00,\
+  72,00,73,00,6f,00,72,00,73,00,5c,00,4f,00,62,00,73,00,69,00,64,00,69,00,61,\
+  00,6e,00,5c,00,64,00,69,00,61,00,67,00,6f,00,6e,00,61,00,6c,00,32,00,2e,00,\
+  63,00,75,00,72,00,2c,00,25,00,53,00,59,00,53,00,54,00,45,00,4d,00,52,00,4f,\
+  00,4f,00,54,00,25,00,5c,00,43,00,75,00,72,00,73,00,6f,00,72,00,73,00,5c,00,\
+  4f,00,62,00,73,00,69,00,64,00,69,00,61,00,6e,00,5c,00,6d,00,6f,00,76,00,65,\
+  00,2e,00,63,00,75,00,72,00,2c,00,25,00,53,00,59,00,53,00,54,00,45,00,4d,00,\
+  52,00,4f,00,4f,00,54,00,25,00,5c,00,43,00,75,00,72,00,73,00,6f,00,72,00,73,\
+  00,5c,00,4f,00,62,00,73,00,69,00,64,00,69,00,61,00,6e,00,5c,00,61,00,6c,00,\
+  74,00,65,00,72,00,6e,00,61,00,74,00,65,00,2e,00,63,00,75,00,72,00,2c,00,25,\
+  00,53,00,59,00,53,00,54,00,45,00,4d,00,52,00,4f,00,4f,00,54,00,25,00,5c,00,\
+  43,00,75,00,72,00,73,00,6f,00,72,00,73,00,5c,00,4f,00,62,00,73,00,69,00,64,\
+  00,69,00,61,00,6e,00,5c,00,6c,00,69,00,6e,00,6b,00,2e,00,63,00,75,00,72,00,\
+  2c,00,2c,00,00,00
+"Capitaine Cursors"="C:\\WINDOWS\\Cursors\\Capitain Cursors\\normal-select.cur,C:\\WINDOWS\\Cursors\\Capitain Cursors\\help-select.cur,C:\\WINDOWS\\Cursors\\Capitain Cursors\\working-in-background.ani,C:\\WINDOWS\\Cursors\\Capitain Cursors\\busy.ani,C:\\WINDOWS\\Cursors\\Capitain Cursors\\precision-select.cur,C:\\WINDOWS\\Cursors\\Capitain Cursors\\text-select.cur,C:\\WINDOWS\\Cursors\\Capitain Cursors\\handwriting.cur,C:\\WINDOWS\\Cursors\\Capitain Cursors\\unavailable.cur,C:\\WINDOWS\\Cursors\\Capitain Cursors\\vertical-resize.cur,C:\\WINDOWS\\Cursors\\Capitain Cursors\\horizontal-resize.cur,C:\\WINDOWS\\Cursors\\Capitain Cursors\\diagonal-resize-1.cur,C:\\WINDOWS\\Cursors\\Capitain Cursors\\diagonal-resize-2.cur,C:\\WINDOWS\\Cursors\\Capitain Cursors\\move.cur,C:\\WINDOWS\\Cursors\\Capitain Cursors\\alt-select.cur,C:\\WINDOWS\\Cursors\\Capitain Cursors\\link-select.cur"
 
 ; disable web search in start menu 
 [HKEY_CURRENT_USER\SOFTWARE\Policies\Microsoft\Windows\Explorer]
@@ -3933,8 +4056,35 @@ while ($script:loop) {
 }
       ]]>
     </File>
-    <File path="C:\Windows\Temp\SoftwareInstallerGUIShortcutCreator.ps1">
+    <File path="C:\Windows\Temp\DownloadResources_and_SoftwareInstallerGUIShortcutCreator.ps1">
       <![CDATA[
+# Download Resources
+$targetFile = "C:\Windows\Setup\Scripts\DownloadResources.ps1"
+$shortcutPath = "C:\Users\Default\Desktop\Download Resources.lnk"
+
+# Create WScript.Shell COM object
+$WshShell = New-Object -ComObject WScript.Shell
+
+# Create a new shortcut
+$shortcut = $WshShell.CreateShortcut($shortcutPath)
+
+# Set the target path to launch PowerShell with the script as an argument
+$shortcut.TargetPath = "C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe"
+$shortcut.Arguments = "-ExecutionPolicy Bypass -NoProfile -File `"$targetFile`""
+$shortcut.IconLocation = "C:\Windows\System32\shell32.dll,43"
+$shortcut.WorkingDirectory = "C:\Windows\System32"
+$shortcut.Description = "Download Resources"
+
+# Save the shortcut
+$shortcut.Save()
+
+# Set the "Run as administrator" flag in the shortcut file using native methods
+$bytes = [System.IO.File]::ReadAllBytes($shortcutPath)
+$bytes[21] = 34 # 0x22 (34 in decimal) sets the RunAs flag
+[System.IO.File]::WriteAllBytes($shortcutPath, $bytes)
+# Download Resources
+
+# Install Software
 $targetFile = "C:\Windows\Setup\Scripts\SoftwareInstallerGUI.ps1"
 $shortcutPath = "C:\Users\Default\Desktop\Install Software.lnk"
 
@@ -3949,7 +4099,7 @@ $shortcut.TargetPath = "C:\Windows\System32\WindowsPowerShell\v1.0\powershell.ex
 $shortcut.Arguments = "-ExecutionPolicy Bypass -NoProfile -File `"$targetFile`""
 $shortcut.IconLocation = "C:\Windows\System32\shell32.dll,43"
 $shortcut.WorkingDirectory = "C:\Windows\System32"
-$shortcut.Description = "Launch UWScript with Administrator Privileges"
+$shortcut.Description = "Install Software"
 
 # Save the shortcut
 $shortcut.Save()
@@ -3958,13 +4108,30 @@ $shortcut.Save()
 $bytes = [System.IO.File]::ReadAllBytes($shortcutPath)
 $bytes[21] = 34 # 0x22 (34 in decimal) sets the RunAs flag
 [System.IO.File]::WriteAllBytes($shortcutPath, $bytes)
+# Install Software
       ]]>
     </File>
-	<File path="C:\Windows\Temp\DownloadResources.ps1">
+	<File path="C:\Windows\Setup\Scripts\DownloadResources.ps1">
 	  <![CDATA[
-# Download cpp.ico from somewhere.
-# Invoke-WebRequest  -OutFile C:\Windows\Setup\Resources\Icons\cpp.ico
-# Invoke-WebRequest -Uri https://raw.githubusercontent.com/thomasmaurer/demo-cloudshell/master/helloworld.ps1 -OutFile .\helloworld.ps1; .\helloworld.ps1 
+$ProgressPreference = 'SilentlyContinue'
+
+# Download repo
+Invoke-WebRequest -Uri https://github.com/aeris170/W10-W11CleanInstall/archive/refs/heads/master.zip -OutFile C:\Windows\Setup\repo.zip
+
+# Un-zip
+Expand-Archive -LiteralPath C:\Windows\Setup\repo.zip -DestinationPath C:\Windows\Setup\
+
+# Delete .zip File
+Remove-Item C:\Windows\Setup\repo.zip
+
+# Move resources
+Move-Item -Path C:\Windows\Setup\W10-W11CleanInstall-master\Resources -Destination C:\Windows\Setup
+
+# Delete repo folder
+Remove-Item C:\Windows\Setup\W10-W11CleanInstall-master -Recurse
+
+# Move Mouse Cursors to C:\Windows\Cursors
+Copy-Item -Path C:\Windows\Setup\Resources\Cursors\* -Destination C:\Windows\Cursors -Recurse -Force
 	  ]]>
     </File>
 	<File path="C:\Users\Default\User Customization.ps1">
@@ -4477,6 +4644,129 @@ Windows Registry Editor Version 5.00
 "SystemUsesLightTheme"=dword:00000000 ; Windows mode [Dark]
 "EnableTransparency"=dword:00000001   ; Transparency [x]
 
+; obsidian cursor
+[HKEY_CURRENT_USER\Control Panel\Cursors]
+"AppStarting"=hex(2):25,00,53,00,59,00,53,00,54,00,45,00,4d,00,52,00,4f,00,4f,\
+  00,54,00,25,00,5c,00,43,00,75,00,72,00,73,00,6f,00,72,00,73,00,5c,00,4f,00,\
+  62,00,73,00,69,00,64,00,69,00,61,00,6e,00,5c,00,77,00,6f,00,72,00,6b,00,69,\
+  00,6e,00,67,00,32,00,2e,00,61,00,6e,00,69,00,00,00
+"Arrow"=hex(2):25,00,53,00,59,00,53,00,54,00,45,00,4d,00,52,00,4f,00,4f,00,54,\
+  00,25,00,5c,00,43,00,75,00,72,00,73,00,6f,00,72,00,73,00,5c,00,4f,00,62,00,\
+  73,00,69,00,64,00,69,00,61,00,6e,00,5c,00,6e,00,6f,00,72,00,6d,00,61,00,6c,\
+  00,2e,00,63,00,75,00,72,00,00,00
+"ContactVisualization"=dword:00000001
+"Crosshair"=hex(2):25,00,53,00,59,00,53,00,54,00,45,00,4d,00,52,00,4f,00,4f,00,\
+  54,00,25,00,5c,00,43,00,75,00,72,00,73,00,6f,00,72,00,73,00,5c,00,4f,00,62,\
+  00,73,00,69,00,64,00,69,00,61,00,6e,00,5c,00,70,00,72,00,65,00,63,00,69,00,\
+  73,00,69,00,6f,00,6e,00,2e,00,63,00,75,00,72,00,00,00
+"CursorBaseSize"=dword:00000020
+"GestureVisualization"=dword:0000001f
+"Hand"=hex(2):25,00,53,00,59,00,53,00,54,00,45,00,4d,00,52,00,4f,00,4f,00,54,\
+  00,25,00,5c,00,43,00,75,00,72,00,73,00,6f,00,72,00,73,00,5c,00,4f,00,62,00,\
+  73,00,69,00,64,00,69,00,61,00,6e,00,5c,00,6c,00,69,00,6e,00,6b,00,2e,00,63,\
+  00,75,00,72,00,00,00
+"Help"=hex(2):25,00,53,00,59,00,53,00,54,00,45,00,4d,00,52,00,4f,00,4f,00,54,\
+  00,25,00,5c,00,43,00,75,00,72,00,73,00,6f,00,72,00,73,00,5c,00,4f,00,62,00,\
+  73,00,69,00,64,00,69,00,61,00,6e,00,5c,00,68,00,65,00,6c,00,70,00,2e,00,63,\
+  00,75,00,72,00,00,00
+"IBeam"=hex(2):25,00,53,00,59,00,53,00,54,00,45,00,4d,00,52,00,4f,00,4f,00,54,\
+  00,25,00,5c,00,43,00,75,00,72,00,73,00,6f,00,72,00,73,00,5c,00,4f,00,62,00,\
+  73,00,69,00,64,00,69,00,61,00,6e,00,5c,00,74,00,65,00,78,00,74,00,2e,00,63,\
+  00,75,00,72,00,00,00
+"No"=hex(2):25,00,53,00,59,00,53,00,54,00,45,00,4d,00,52,00,4f,00,4f,00,54,00,\
+  25,00,5c,00,43,00,75,00,72,00,73,00,6f,00,72,00,73,00,5c,00,4f,00,62,00,73,\
+  00,69,00,64,00,69,00,61,00,6e,00,5c,00,75,00,6e,00,61,00,76,00,61,00,69,00,\
+  6c,00,61,00,62,00,6c,00,65,00,2e,00,63,00,75,00,72,00,00,00
+"NWPen"=hex(2):25,00,53,00,59,00,53,00,54,00,45,00,4d,00,52,00,4f,00,4f,00,54,\
+  00,25,00,5c,00,43,00,75,00,72,00,73,00,6f,00,72,00,73,00,5c,00,4f,00,62,00,\
+  73,00,69,00,64,00,69,00,61,00,6e,00,5c,00,68,00,61,00,6e,00,64,00,77,00,72,\
+  00,69,00,74,00,69,00,6e,00,67,00,2e,00,63,00,75,00,72,00,00,00
+"Scheme Source"=dword:00000001
+"SizeAll"=hex(2):25,00,53,00,59,00,53,00,54,00,45,00,4d,00,52,00,4f,00,4f,00,\
+  54,00,25,00,5c,00,43,00,75,00,72,00,73,00,6f,00,72,00,73,00,5c,00,4f,00,62,\
+  00,73,00,69,00,64,00,69,00,61,00,6e,00,5c,00,6d,00,6f,00,76,00,65,00,2e,00,\
+  63,00,75,00,72,00,00,00
+"SizeNESW"=hex(2):25,00,53,00,59,00,53,00,54,00,45,00,4d,00,52,00,4f,00,4f,00,\
+  54,00,25,00,5c,00,43,00,75,00,72,00,73,00,6f,00,72,00,73,00,5c,00,4f,00,62,\
+  00,73,00,69,00,64,00,69,00,61,00,6e,00,5c,00,64,00,69,00,61,00,67,00,6f,00,\
+  6e,00,61,00,6c,00,32,00,2e,00,63,00,75,00,72,00,00,00
+"SizeNS"=hex(2):25,00,53,00,59,00,53,00,54,00,45,00,4d,00,52,00,4f,00,4f,00,54,\
+  00,25,00,5c,00,43,00,75,00,72,00,73,00,6f,00,72,00,73,00,5c,00,4f,00,62,00,\
+  73,00,69,00,64,00,69,00,61,00,6e,00,5c,00,76,00,65,00,72,00,74,00,69,00,63,\
+  00,61,00,6c,00,2e,00,63,00,75,00,72,00,00,00
+"SizeNWSE"=hex(2):25,00,53,00,59,00,53,00,54,00,45,00,4d,00,52,00,4f,00,4f,00,\
+  54,00,25,00,5c,00,43,00,75,00,72,00,73,00,6f,00,72,00,73,00,5c,00,4f,00,62,\
+  00,73,00,69,00,64,00,69,00,61,00,6e,00,5c,00,64,00,69,00,61,00,67,00,6f,00,\
+  6e,00,61,00,6c,00,31,00,2e,00,63,00,75,00,72,00,00,00
+"SizeWE"=hex(2):25,00,53,00,59,00,53,00,54,00,45,00,4d,00,52,00,4f,00,4f,00,54,\
+  00,25,00,5c,00,43,00,75,00,72,00,73,00,6f,00,72,00,73,00,5c,00,4f,00,62,00,\
+  73,00,69,00,64,00,69,00,61,00,6e,00,5c,00,68,00,6f,00,72,00,69,00,7a,00,6f,\
+  00,6e,00,74,00,61,00,6c,00,2e,00,63,00,75,00,72,00,00,00
+"UpArrow"=hex(2):25,00,53,00,59,00,53,00,54,00,45,00,4d,00,52,00,4f,00,4f,00,\
+  54,00,25,00,5c,00,43,00,75,00,72,00,73,00,6f,00,72,00,73,00,5c,00,4f,00,62,\
+  00,73,00,69,00,64,00,69,00,61,00,6e,00,5c,00,61,00,6c,00,74,00,65,00,72,00,\
+  6e,00,61,00,74,00,65,00,2e,00,63,00,75,00,72,00,00,00
+"Wait"=hex(2):25,00,53,00,59,00,53,00,54,00,45,00,4d,00,52,00,4f,00,4f,00,54,\
+  00,25,00,5c,00,43,00,75,00,72,00,73,00,6f,00,72,00,73,00,5c,00,4f,00,62,00,\
+  73,00,69,00,64,00,69,00,61,00,6e,00,5c,00,62,00,75,00,73,00,79,00,32,00,2e,\
+  00,61,00,6e,00,69,00,00,00
+@="Obsidian"
+
+[HKEY_CURRENT_USER\Control Panel\Cursors\Schemes]
+"Obsidian"=hex(2):25,00,53,00,59,00,53,00,54,00,45,00,4d,00,52,00,4f,00,4f,00,\
+  54,00,25,00,5c,00,43,00,75,00,72,00,73,00,6f,00,72,00,73,00,5c,00,4f,00,62,\
+  00,73,00,69,00,64,00,69,00,61,00,6e,00,5c,00,6e,00,6f,00,72,00,6d,00,61,00,\
+  6c,00,2e,00,63,00,75,00,72,00,2c,00,25,00,53,00,59,00,53,00,54,00,45,00,4d,\
+  00,52,00,4f,00,4f,00,54,00,25,00,5c,00,43,00,75,00,72,00,73,00,6f,00,72,00,\
+  73,00,5c,00,4f,00,62,00,73,00,69,00,64,00,69,00,61,00,6e,00,5c,00,68,00,65,\
+  00,6c,00,70,00,2e,00,63,00,75,00,72,00,2c,00,25,00,53,00,59,00,53,00,54,00,\
+  45,00,4d,00,52,00,4f,00,4f,00,54,00,25,00,5c,00,43,00,75,00,72,00,73,00,6f,\
+  00,72,00,73,00,5c,00,4f,00,62,00,73,00,69,00,64,00,69,00,61,00,6e,00,5c,00,\
+  77,00,6f,00,72,00,6b,00,69,00,6e,00,67,00,32,00,2e,00,61,00,6e,00,69,00,2c,\
+  00,25,00,53,00,59,00,53,00,54,00,45,00,4d,00,52,00,4f,00,4f,00,54,00,25,00,\
+  5c,00,43,00,75,00,72,00,73,00,6f,00,72,00,73,00,5c,00,4f,00,62,00,73,00,69,\
+  00,64,00,69,00,61,00,6e,00,5c,00,62,00,75,00,73,00,79,00,32,00,2e,00,61,00,\
+  6e,00,69,00,2c,00,25,00,53,00,59,00,53,00,54,00,45,00,4d,00,52,00,4f,00,4f,\
+  00,54,00,25,00,5c,00,43,00,75,00,72,00,73,00,6f,00,72,00,73,00,5c,00,4f,00,\
+  62,00,73,00,69,00,64,00,69,00,61,00,6e,00,5c,00,70,00,72,00,65,00,63,00,69,\
+  00,73,00,69,00,6f,00,6e,00,2e,00,63,00,75,00,72,00,2c,00,25,00,53,00,59,00,\
+  53,00,54,00,45,00,4d,00,52,00,4f,00,4f,00,54,00,25,00,5c,00,43,00,75,00,72,\
+  00,73,00,6f,00,72,00,73,00,5c,00,4f,00,62,00,73,00,69,00,64,00,69,00,61,00,\
+  6e,00,5c,00,74,00,65,00,78,00,74,00,2e,00,63,00,75,00,72,00,2c,00,25,00,53,\
+  00,59,00,53,00,54,00,45,00,4d,00,52,00,4f,00,4f,00,54,00,25,00,5c,00,43,00,\
+  75,00,72,00,73,00,6f,00,72,00,73,00,5c,00,4f,00,62,00,73,00,69,00,64,00,69,\
+  00,61,00,6e,00,5c,00,68,00,61,00,6e,00,64,00,77,00,72,00,69,00,74,00,69,00,\
+  6e,00,67,00,2e,00,63,00,75,00,72,00,2c,00,25,00,53,00,59,00,53,00,54,00,45,\
+  00,4d,00,52,00,4f,00,4f,00,54,00,25,00,5c,00,43,00,75,00,72,00,73,00,6f,00,\
+  72,00,73,00,5c,00,4f,00,62,00,73,00,69,00,64,00,69,00,61,00,6e,00,5c,00,75,\
+  00,6e,00,61,00,76,00,61,00,69,00,6c,00,61,00,62,00,6c,00,65,00,2e,00,63,00,\
+  75,00,72,00,2c,00,25,00,53,00,59,00,53,00,54,00,45,00,4d,00,52,00,4f,00,4f,\
+  00,54,00,25,00,5c,00,43,00,75,00,72,00,73,00,6f,00,72,00,73,00,5c,00,4f,00,\
+  62,00,73,00,69,00,64,00,69,00,61,00,6e,00,5c,00,76,00,65,00,72,00,74,00,69,\
+  00,63,00,61,00,6c,00,2e,00,63,00,75,00,72,00,2c,00,25,00,53,00,59,00,53,00,\
+  54,00,45,00,4d,00,52,00,4f,00,4f,00,54,00,25,00,5c,00,43,00,75,00,72,00,73,\
+  00,6f,00,72,00,73,00,5c,00,4f,00,62,00,73,00,69,00,64,00,69,00,61,00,6e,00,\
+  5c,00,68,00,6f,00,72,00,69,00,7a,00,6f,00,6e,00,74,00,61,00,6c,00,2e,00,63,\
+  00,75,00,72,00,2c,00,25,00,53,00,59,00,53,00,54,00,45,00,4d,00,52,00,4f,00,\
+  4f,00,54,00,25,00,5c,00,43,00,75,00,72,00,73,00,6f,00,72,00,73,00,5c,00,4f,\
+  00,62,00,73,00,69,00,64,00,69,00,61,00,6e,00,5c,00,64,00,69,00,61,00,67,00,\
+  6f,00,6e,00,61,00,6c,00,31,00,2e,00,63,00,75,00,72,00,2c,00,25,00,53,00,59,\
+  00,53,00,54,00,45,00,4d,00,52,00,4f,00,4f,00,54,00,25,00,5c,00,43,00,75,00,\
+  72,00,73,00,6f,00,72,00,73,00,5c,00,4f,00,62,00,73,00,69,00,64,00,69,00,61,\
+  00,6e,00,5c,00,64,00,69,00,61,00,67,00,6f,00,6e,00,61,00,6c,00,32,00,2e,00,\
+  63,00,75,00,72,00,2c,00,25,00,53,00,59,00,53,00,54,00,45,00,4d,00,52,00,4f,\
+  00,4f,00,54,00,25,00,5c,00,43,00,75,00,72,00,73,00,6f,00,72,00,73,00,5c,00,\
+  4f,00,62,00,73,00,69,00,64,00,69,00,61,00,6e,00,5c,00,6d,00,6f,00,76,00,65,\
+  00,2e,00,63,00,75,00,72,00,2c,00,25,00,53,00,59,00,53,00,54,00,45,00,4d,00,\
+  52,00,4f,00,4f,00,54,00,25,00,5c,00,43,00,75,00,72,00,73,00,6f,00,72,00,73,\
+  00,5c,00,4f,00,62,00,73,00,69,00,64,00,69,00,61,00,6e,00,5c,00,61,00,6c,00,\
+  74,00,65,00,72,00,6e,00,61,00,74,00,65,00,2e,00,63,00,75,00,72,00,2c,00,25,\
+  00,53,00,59,00,53,00,54,00,45,00,4d,00,52,00,4f,00,4f,00,54,00,25,00,5c,00,\
+  43,00,75,00,72,00,73,00,6f,00,72,00,73,00,5c,00,4f,00,62,00,73,00,69,00,64,\
+  00,69,00,61,00,6e,00,5c,00,6c,00,69,00,6e,00,6b,00,2e,00,63,00,75,00,72,00,\
+  2c,00,2c,00,00,00
+"Capitaine Cursors"="C:\\WINDOWS\\Cursors\\Capitain Cursors\\normal-select.cur,C:\\WINDOWS\\Cursors\\Capitain Cursors\\help-select.cur,C:\\WINDOWS\\Cursors\\Capitain Cursors\\working-in-background.ani,C:\\WINDOWS\\Cursors\\Capitain Cursors\\busy.ani,C:\\WINDOWS\\Cursors\\Capitain Cursors\\precision-select.cur,C:\\WINDOWS\\Cursors\\Capitain Cursors\\text-select.cur,C:\\WINDOWS\\Cursors\\Capitain Cursors\\handwriting.cur,C:\\WINDOWS\\Cursors\\Capitain Cursors\\unavailable.cur,C:\\WINDOWS\\Cursors\\Capitain Cursors\\vertical-resize.cur,C:\\WINDOWS\\Cursors\\Capitain Cursors\\horizontal-resize.cur,C:\\WINDOWS\\Cursors\\Capitain Cursors\\diagonal-resize-1.cur,C:\\WINDOWS\\Cursors\\Capitain Cursors\\diagonal-resize-2.cur,C:\\WINDOWS\\Cursors\\Capitain Cursors\\move.cur,C:\\WINDOWS\\Cursors\\Capitain Cursors\\alt-select.cur,C:\\WINDOWS\\Cursors\\Capitain Cursors\\link-select.cur"
+
 ; disable web search in start menu 
 [HKEY_CURRENT_USER\SOFTWARE\Policies\Microsoft\Windows\Explorer]
 "DisableSearchBoxSuggestions"=dword:00000001
@@ -4979,6 +5269,8 @@ foreach ($key in $softwareMap) {
     Try {
         if ($key -eq "Visual_Studio_2022") {
             $result = winget install -e --scope machine --accept-package-agreements --accept-source-agreements --source winget --id $value --custom --norestart
+        } elseif ($key -eq "Git") {
+			$result = winget install -e --scope machine --accept-package-agreements --accept-source-agreements --source winget --id $value --interactive
         } else {
             $result = winget install -e --scope machine --accept-package-agreements --accept-source-agreements --source winget --id $value
         }
@@ -5428,23 +5720,26 @@ $xamlWindow.ShowDialog()
 	<File path="C:\Windows\Setup\Scripts\RemoveCMD_Pwsh.reg">
       <![CDATA[
 Windows Registry Editor Version 5.00
+[-HKEY_CLASSES_ROOT\Directory\background\shell\AnyCode]
 [-HKEY_CLASSES_ROOT\Directory\background\shell\ShowCMD]
 [-HKEY_CLASSES_ROOT\Directory\background\shell\ShowPwsh]
+[-HKEY_CLASSES_ROOT\Directory\background\shell\git_gui]
+[-HKEY_CLASSES_ROOT\Directory\background\shell\git_shell]
+
+[-HKEY_CLASSES_ROOT\Directory\shell\git_gui]
+[-HKEY_CLASSES_ROOT\Directory\shell\git_shell]
 		]]>
     </File>
 	<File path="C:\Windows\Setup\Scripts\ApplyNilesoftConfig.ps1">
       <![CDATA[
-$sourceDirectory = "C:\Windows\Setup\Resources\Nilesoft_Shell\*"
 $destinationDirectory = "C:\Program Files\Nilesoft Shell"
-Copy-item -Force -Recurse -Verbose $sourceDirectory -Destination $destinationDirectory
+Copy-item -Path C:\Windows\Setup\Resources\Nilesoft_Shell\* -Destination $destinationDirectory -Recurse -Force
 regedit /S C:\Windows\Setup\Scripts\RemoveCMD_Pwsh.reg
 		]]>
     </File>
 	<File path="C:\Windows\Setup\Scripts\ApplyWindhawkConfig.ps1">
       <![CDATA[
-$sourceDirectory = "C:\Windows\Setup\Resources\Windhawk\*"
-$destinationDirectory = "C:\ProgramData\Windhawk"
-Copy-item -Force -Recurse -Verbose $sourceDirectory -Destination $destinationDirectory
+Copy-item C:\Windows\Setup\Resources\Windhawk\* -Destination C:\ProgramData\Windhawk -Recurse -Force
 regedit /S C:\Windows\Setup\Resources\Windhawk\WinhawkSettings.reg
 		]]>
     </File>
