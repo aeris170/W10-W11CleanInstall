@@ -77,7 +77,7 @@ Yes, all via winget 😏 you have the option to select which. Don't like some? D
 > [!IMPORTANT]
 > Nilesoft comes with it's own Terminal tab. Thefore CMD and pwsh options will have duplicates. You can run
 > ```
-> regedit /S C:\Windows\Setup\Scripts\RemoveCMD_Pwsh.reg
+> regedit /S C:\Windows\Setup\Scripts\TidyContextMenu.reg
 > ```
 > to clean-up context menu.
 

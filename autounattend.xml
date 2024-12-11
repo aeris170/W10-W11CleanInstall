@@ -5717,7 +5717,7 @@ $xamlWindow.FindName("InstallButton").Add_Click({
 $xamlWindow.ShowDialog()
 		]]>
     </File>
-	<File path="C:\Windows\Setup\Scripts\RemoveCMD_Pwsh.reg">
+	<File path="C:\Windows\Setup\Scripts\TidyContextMenu.reg">
       <![CDATA[
 Windows Registry Editor Version 5.00
 [-HKEY_CLASSES_ROOT\Directory\background\shell\AnyCode]
@@ -5734,7 +5734,7 @@ Windows Registry Editor Version 5.00
       <![CDATA[
 $destinationDirectory = "C:\Program Files\Nilesoft Shell"
 Copy-item -Path C:\Windows\Setup\Resources\Nilesoft_Shell\* -Destination $destinationDirectory -Recurse -Force
-regedit /S C:\Windows\Setup\Scripts\RemoveCMD_Pwsh.reg
+regedit /S C:\Windows\Setup\Scripts\TidyContextMenu.reg
 		]]>
     </File>
 	<File path="C:\Windows\Setup\Scripts\ApplyWindhawkConfig.ps1">
