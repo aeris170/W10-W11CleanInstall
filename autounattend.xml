@@ -793,7 +793,7 @@
           <!-- Creates SoftwareInstallGUI Script Shortcut on Desktop -->
           <Path>powershell.exe -NoProfile -WindowStyle Hidden -ExecutionPolicy Bypass -File "C:\Windows\Temp\DownloadResources_and_SoftwareInstallerGUIShortcutCreator.ps1"</Path>
         </RunSynchronousCommand>
-		<RunSynchronousCommand wcm:action="add">
+        <RunSynchronousCommand wcm:action="add">
           <Order>9</Order>
           <!-- Downloads necessary resources -->
           <Path>powershell.exe -NoProfile -WindowStyle Hidden -ExecutionPolicy Bypass -File "C:\Windows\Setup\Scripts\DownloadResources.ps1"</Path>
@@ -872,7 +872,7 @@
           <!-- Creates SoftwareInstallGUI Script Shortcut on Desktop -->
           <Path>powershell.exe -NoProfile -WindowStyle Hidden -ExecutionPolicy Bypass -File "C:\Windows\Temp\DownloadResources_and_SoftwareInstallerGUIShortcutCreator.ps1"</Path>
         </RunSynchronousCommand>
-		<RunSynchronousCommand wcm:action="add">
+        <RunSynchronousCommand wcm:action="add">
           <Order>9</Order>
           <!-- Downloads necessary resources -->
           <Path>powershell.exe -NoProfile -WindowStyle Hidden -ExecutionPolicy Bypass -File "C:\Windows\Setup\Scripts\DownloadResources.ps1"</Path>
@@ -951,7 +951,7 @@
           <!-- Creates SoftwareInstallGUI Script Shortcut on Desktop -->
           <Path>powershell.exe -NoProfile -WindowStyle Hidden -ExecutionPolicy Bypass -File "C:\Windows\Temp\DownloadResources_and_SoftwareInstallerGUIShortcutCreator.ps1"</Path>
         </RunSynchronousCommand>
-		<RunSynchronousCommand wcm:action="add">
+        <RunSynchronousCommand wcm:action="add">
           <Order>9</Order>
           <!-- Downloads necessary resources -->
           <Path>powershell.exe -NoProfile -WindowStyle Hidden -ExecutionPolicy Bypass -File "C:\Windows\Setup\Scripts\DownloadResources.ps1"</Path>
@@ -1065,7 +1065,7 @@ foreach( $file in $Document.unattend.Extensions.File ) {
     };
     [System.IO.File]::WriteAllBytes( $path, ( $encoding.GetPreamble() + $encoding.GetBytes( $file.InnerText.Trim() ) ) );
 }
-		</ExtractScript>
+        </ExtractScript>
     <File path="C:\Windows\Temp\DotNet.ps1">
       <![CDATA[
 function Enable-DotNetFramework {
@@ -2630,13 +2630,13 @@ function Set-RecommendedHKCURegistry {
     Clear-Host
     Write-Host "Optimizing User Registry . . ."
 
-   	# Set Wallpaper
-	reg.exe delete "HKEY_CURRENT_USER\Control Panel\Desktop" /v Wallpaper /f
-	reg.exe add "HKEY_CURRENT_USER\Control Panel\Desktop" /v Wallpaper /t REG_SZ /d ""
-	reg.exe delete "HKEY_CURRENT_USER\Control Panel\Colors" /v Background /f
-	reg.exe add "HKEY_CURRENT_USER\Control Panel\Colors" /v Background /t REG_SZ /d "0 0 0" /f
-	
-	# Notify the system of the change
+    # Set Wallpaper
+    reg.exe delete "HKEY_CURRENT_USER\Control Panel\Desktop" /v Wallpaper /f
+    reg.exe add "HKEY_CURRENT_USER\Control Panel\Desktop" /v Wallpaper /t REG_SZ /d ""
+    reg.exe delete "HKEY_CURRENT_USER\Control Panel\Colors" /v Background /f
+    reg.exe add "HKEY_CURRENT_USER\Control Panel\Colors" /v Background /t REG_SZ /d "0 0 0" /f
+    
+    # Notify the system of the change
     rundll32.exe user32.dll, UpdatePerUserSystemParameters
 
     $MultilineComment = @"
@@ -2790,17 +2790,17 @@ Windows Registry Editor Version 5.00
 "MouseThreshold2"="0"
 "MouseSensitivity"="10"
 "SmoothMouseXCurve"=hex:\
-	00,00,00,00,00,00,00,00,\
-	C0,CC,0C,00,00,00,00,00,\
-	80,99,19,00,00,00,00,00,\
-	40,66,26,00,00,00,00,00,\
-	00,33,33,00,00,00,00,00
+    00,00,00,00,00,00,00,00,\
+    C0,CC,0C,00,00,00,00,00,\
+    80,99,19,00,00,00,00,00,\
+    40,66,26,00,00,00,00,00,\
+    00,33,33,00,00,00,00,00
 "SmoothMouseYCurve"=hex:\
-	00,00,00,00,00,00,00,00,\
-	00,00,38,00,00,00,00,00,\
-	00,00,70,00,00,00,00,00,\
-	00,00,A8,00,00,00,00,00,\
-	00,00,E0,00,00,00,00,00
+    00,00,00,00,00,00,00,00,\
+    00,00,38,00,00,00,00,00,\
+    00,00,70,00,00,00,00,00,\
+    00,00,A8,00,00,00,00,00,\
+    00,00,E0,00,00,00,00,00
 
 ; SYSTEM AND SECURITY
 ; set appearance options to custom
@@ -3646,7 +3646,7 @@ function Set-ServiceStartup {
     'RemoteAccess', 'RemoteRegistry', 'shpamsvc', 
     'ssh-agent', 'tzautoupdate', 'uhssvc',
     'UevAgentService'
-	)
+    )
 
     # List of services to set to Manual
     $manualServices = @(
@@ -3950,72 +3950,72 @@ function Set-DefaultPowerSettings {
 # End of Power Settings Functions
 
 function Delete-Edge {
-	$stop = "MicrosoftEdgeUpdate", "OneDrive", "WidgetService", "Widgets", "msedge", "msedgewebview2"
-	$stop | ForEach-Object { Stop-Process -Name $_ -Force -ErrorAction SilentlyContinue }
-	
-	# uninstall copilot
-	Get-AppxPackage -allusers *Microsoft.Windows.Ai.Copilot.Provider* | Remove-AppxPackage
-	
-	# disable edge updates regedit
-	reg add "HKLM\SOFTWARE\Microsoft\EdgeUpdate" /v "DoNotUpdateToEdgeWithChromium" /t REG_DWORD /d "1" /f | Out-Null
-	
-	# allow edge uninstall regedit
-	reg add "HKLM\SOFTWARE\WOW6432Node\Microsoft\EdgeUpdateDev" /v "AllowUninstall" /t REG_SZ /f | Out-Null
-	
-	# new folder to uninstall edge
-	New-Item -Path "$env:SystemRoot\SystemApps\Microsoft.MicrosoftEdge_8wekyb3d8bbwe" -ItemType Directory -ErrorAction SilentlyContinue | Out-Null
-	
-	# new file to uninstall edge
-	New-Item -Path "$env:SystemRoot\SystemApps\Microsoft.MicrosoftEdge_8wekyb3d8bbwe" -ItemType File -Name "MicrosoftEdge.exe" -ErrorAction SilentlyContinue | Out-Null
-	
-	# find edge uninstall string
-	$regview = [Microsoft.Win32.RegistryView]::Registry32
-	$microsoft = [Microsoft.Win32.RegistryKey]::OpenBaseKey([Microsoft.Win32.RegistryHive]::LocalMachine, $regview).
-	OpenSubKey("SOFTWARE\Microsoft", $true)
-	$uninstallregkey = $microsoft.OpenSubKey("Windows\CurrentVersion\Uninstall\Microsoft Edge")
-	try {
-		$uninstallstring = $uninstallregkey.GetValue("UninstallString") + " --force-uninstall"
-	} catch {
-	}
-	
-	# uninstall edge
-	Start-Process cmd.exe "/c $uninstallstring" -WindowStyle Hidden -Wait
-	
-	# remove folder file
-	Remove-Item -Recurse -Force "$env:SystemRoot\SystemApps\Microsoft.MicrosoftEdge_8wekyb3d8bbwe" -ErrorAction SilentlyContinue | Out-Null
-	
-	# find edgeupdate.exe
-	$edgeupdate = @(); "LocalApplicationData", "ProgramFilesX86", "ProgramFiles" | ForEach-Object {
-		$folder = [Environment]::GetFolderPath($_)
-		$edgeupdate += Get-ChildItem "$folder\Microsoft\EdgeUpdate\*.*.*.*\MicrosoftEdgeUpdate.exe" -rec -ea 0
-	}
-	
-	# find edgeupdate & allow uninstall regedit
-	$global:REG = "HKCU:\SOFTWARE", "HKLM:\SOFTWARE", "HKCU:\SOFTWARE\Policies", "HKLM:\SOFTWARE\Policies", "HKCU:\SOFTWARE\WOW6432Node", "HKLM:\SOFTWARE\WOW6432Node", "HKCU:\SOFTWARE\WOW6432Node\Policies", "HKLM:\SOFTWARE\WOW6432Node\Policies"
-	foreach ($location in $REG) { Remove-Item "$location\Microsoft\EdgeUpdate" -recurse -force -ErrorAction SilentlyContinue }
-	
-	# uninstall edgeupdate
-	foreach ($path in $edgeupdate) {
-		if (Test-Path $path) { Start-Process -Wait $path -Args "/unregsvc" | Out-Null }
-		do { Start-Sleep 3 } while ((Get-Process -Name "setup", "MicrosoftEdge*" -ErrorAction SilentlyContinue).Path -like "*\Microsoft\Edge*")
-		if (Test-Path $path) { Start-Process -Wait $path -Args "/uninstall" | Out-Null }
-		do { Start-Sleep 3 } while ((Get-Process -Name "setup", "MicrosoftEdge*" -ErrorAction SilentlyContinue).Path -like "*\Microsoft\Edge*")
-	}
-	
-	# remove edgewebview regedit
-	cmd /c "reg delete `"HKLM\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Uninstall\Microsoft EdgeWebView`" /f >nul 2>&1"
-	cmd /c "reg delete `"HKCU\Software\Microsoft\Windows\CurrentVersion\Uninstall\Microsoft EdgeWebView`" /f >nul 2>&1"
-	
-	# remove folders edge edgecore edgeupdate edgewebview temp
-	Remove-Item -Recurse -Force "$env:SystemDrive\Program Files (x86)\Microsoft" -ErrorAction SilentlyContinue | Out-Null
-	
-	# remove edge shortcuts
-	Remove-Item -Recurse -Force "$env:SystemDrive\Windows\System32\config\systemprofile\AppData\Roaming\Microsoft\Internet Explorer\Quick Launch\Microsoft Edge.lnk" -ErrorAction SilentlyContinue | Out-Null
-	Remove-Item -Recurse -Force "$env:USERPROFILE\AppData\Roaming\Microsoft\Internet Explorer\Quick Launch\Microsoft Edge.lnk" -ErrorAction SilentlyContinue | Out-Null
-	Remove-Item -Recurse -Force "$env:USERPROFILE\AppData\Roaming\Microsoft\Internet Explorer\Quick Launch\User Pinned\TaskBar\Microsoft Edge.lnk" -ErrorAction SilentlyContinue | Out-Null
-	Remove-Item -Recurse -Force "$env:USERPROFILE\AppData\Roaming\Microsoft\Internet Explorer\Quick Launch\User Pinned\TaskBar\Tombstones\Microsoft Edge.lnk" -ErrorAction SilentlyContinue | Out-Null
-	Remove-Item -Recurse -Force "$env:ProgramData\Microsoft\Windows\Start Menu\Programs\Microsoft Edge.lnk" -ErrorAction SilentlyContinue | Out-Null
-	Remove-Item -Recurse -Force "$env:SystemDrive\Users\Public\Desktop\Microsoft Edge.lnk" -ErrorAction SilentlyContinue | Out-Null
+    $stop = "MicrosoftEdgeUpdate", "OneDrive", "WidgetService", "Widgets", "msedge", "msedgewebview2"
+    $stop | ForEach-Object { Stop-Process -Name $_ -Force -ErrorAction SilentlyContinue }
+    
+    # uninstall copilot
+    Get-AppxPackage -allusers *Microsoft.Windows.Ai.Copilot.Provider* | Remove-AppxPackage
+    
+    # disable edge updates regedit
+    reg add "HKLM\SOFTWARE\Microsoft\EdgeUpdate" /v "DoNotUpdateToEdgeWithChromium" /t REG_DWORD /d "1" /f | Out-Null
+    
+    # allow edge uninstall regedit
+    reg add "HKLM\SOFTWARE\WOW6432Node\Microsoft\EdgeUpdateDev" /v "AllowUninstall" /t REG_SZ /f | Out-Null
+    
+    # new folder to uninstall edge
+    New-Item -Path "$env:SystemRoot\SystemApps\Microsoft.MicrosoftEdge_8wekyb3d8bbwe" -ItemType Directory -ErrorAction SilentlyContinue | Out-Null
+    
+    # new file to uninstall edge
+    New-Item -Path "$env:SystemRoot\SystemApps\Microsoft.MicrosoftEdge_8wekyb3d8bbwe" -ItemType File -Name "MicrosoftEdge.exe" -ErrorAction SilentlyContinue | Out-Null
+    
+    # find edge uninstall string
+    $regview = [Microsoft.Win32.RegistryView]::Registry32
+    $microsoft = [Microsoft.Win32.RegistryKey]::OpenBaseKey([Microsoft.Win32.RegistryHive]::LocalMachine, $regview).
+    OpenSubKey("SOFTWARE\Microsoft", $true)
+    $uninstallregkey = $microsoft.OpenSubKey("Windows\CurrentVersion\Uninstall\Microsoft Edge")
+    try {
+        $uninstallstring = $uninstallregkey.GetValue("UninstallString") + " --force-uninstall"
+    } catch {
+    }
+    
+    # uninstall edge
+    Start-Process cmd.exe "/c $uninstallstring" -WindowStyle Hidden -Wait
+    
+    # remove folder file
+    Remove-Item -Recurse -Force "$env:SystemRoot\SystemApps\Microsoft.MicrosoftEdge_8wekyb3d8bbwe" -ErrorAction SilentlyContinue | Out-Null
+    
+    # find edgeupdate.exe
+    $edgeupdate = @(); "LocalApplicationData", "ProgramFilesX86", "ProgramFiles" | ForEach-Object {
+        $folder = [Environment]::GetFolderPath($_)
+        $edgeupdate += Get-ChildItem "$folder\Microsoft\EdgeUpdate\*.*.*.*\MicrosoftEdgeUpdate.exe" -rec -ea 0
+    }
+    
+    # find edgeupdate & allow uninstall regedit
+    $global:REG = "HKCU:\SOFTWARE", "HKLM:\SOFTWARE", "HKCU:\SOFTWARE\Policies", "HKLM:\SOFTWARE\Policies", "HKCU:\SOFTWARE\WOW6432Node", "HKLM:\SOFTWARE\WOW6432Node", "HKCU:\SOFTWARE\WOW6432Node\Policies", "HKLM:\SOFTWARE\WOW6432Node\Policies"
+    foreach ($location in $REG) { Remove-Item "$location\Microsoft\EdgeUpdate" -recurse -force -ErrorAction SilentlyContinue }
+    
+    # uninstall edgeupdate
+    foreach ($path in $edgeupdate) {
+        if (Test-Path $path) { Start-Process -Wait $path -Args "/unregsvc" | Out-Null }
+        do { Start-Sleep 3 } while ((Get-Process -Name "setup", "MicrosoftEdge*" -ErrorAction SilentlyContinue).Path -like "*\Microsoft\Edge*")
+        if (Test-Path $path) { Start-Process -Wait $path -Args "/uninstall" | Out-Null }
+        do { Start-Sleep 3 } while ((Get-Process -Name "setup", "MicrosoftEdge*" -ErrorAction SilentlyContinue).Path -like "*\Microsoft\Edge*")
+    }
+    
+    # remove edgewebview regedit
+    cmd /c "reg delete `"HKLM\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Uninstall\Microsoft EdgeWebView`" /f >nul 2>&1"
+    cmd /c "reg delete `"HKCU\Software\Microsoft\Windows\CurrentVersion\Uninstall\Microsoft EdgeWebView`" /f >nul 2>&1"
+    
+    # remove folders edge edgecore edgeupdate edgewebview temp
+    Remove-Item -Recurse -Force "$env:SystemDrive\Program Files (x86)\Microsoft" -ErrorAction SilentlyContinue | Out-Null
+    
+    # remove edge shortcuts
+    Remove-Item -Recurse -Force "$env:SystemDrive\Windows\System32\config\systemprofile\AppData\Roaming\Microsoft\Internet Explorer\Quick Launch\Microsoft Edge.lnk" -ErrorAction SilentlyContinue | Out-Null
+    Remove-Item -Recurse -Force "$env:USERPROFILE\AppData\Roaming\Microsoft\Internet Explorer\Quick Launch\Microsoft Edge.lnk" -ErrorAction SilentlyContinue | Out-Null
+    Remove-Item -Recurse -Force "$env:USERPROFILE\AppData\Roaming\Microsoft\Internet Explorer\Quick Launch\User Pinned\TaskBar\Microsoft Edge.lnk" -ErrorAction SilentlyContinue | Out-Null
+    Remove-Item -Recurse -Force "$env:USERPROFILE\AppData\Roaming\Microsoft\Internet Explorer\Quick Launch\User Pinned\TaskBar\Tombstones\Microsoft Edge.lnk" -ErrorAction SilentlyContinue | Out-Null
+    Remove-Item -Recurse -Force "$env:ProgramData\Microsoft\Windows\Start Menu\Programs\Microsoft Edge.lnk" -ErrorAction SilentlyContinue | Out-Null
+    Remove-Item -Recurse -Force "$env:SystemDrive\Users\Public\Desktop\Microsoft Edge.lnk" -ErrorAction SilentlyContinue | Out-Null
 }
 
 # END OF COMMAND & OPERATION FUNCTIONS
@@ -4045,8 +4045,8 @@ if (Test-Path -Path $markerFilePath) {
     Set-ServiceStartup
     # Power Settings
     Set-RecommendedPowerSettings
-	# Delete Edge
-	Delete-Edge
+    # Delete Edge
+    Delete-Edge
     exit
 }
 
@@ -4111,8 +4111,8 @@ $bytes[21] = 34 # 0x22 (34 in decimal) sets the RunAs flag
 # Install Software
       ]]>
     </File>
-	<File path="C:\Windows\Setup\Scripts\DownloadResources.ps1">
-	  <![CDATA[
+    <File path="C:\Windows\Setup\Scripts\DownloadResources.ps1">
+      <![CDATA[
 $ProgressPreference = 'SilentlyContinue'
 
 # Download repo
@@ -4132,9 +4132,9 @@ Remove-Item C:\Windows\Setup\W10-W11CleanInstall-master -Recurse
 
 # Move Mouse Cursors to C:\Windows\Cursors
 Copy-Item -Path C:\Windows\Setup\Resources\Cursors\* -Destination C:\Windows\Cursors -Recurse -Force
-	  ]]>
+      ]]>
     </File>
-	<File path="C:\Users\Default\User Customization.ps1">
+    <File path="C:\Users\Default\User Customization.ps1">
       <![CDATA[
 # Check if script is running as Administrator
 If (!([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole]"Administrator")) {
@@ -4154,7 +4154,7 @@ reg.exe delete "HKEY_CURRENT_USER\Control Panel\Desktop" /v Wallpaper /f
 reg.exe add "HKEY_CURRENT_USER\Control Panel\Desktop" /v Wallpaper /t REG_SZ /d "" /f
 reg.exe delete "HKEY_CURRENT_USER\Control Panel\Colors" /v Background /f
 reg.exe add "HKEY_CURRENT_USER\Control Panel\Colors" /v Background /t REG_SZ /d "0 0 0" /f
-	
+    
 # Notify the system of the change
 RUNDLL32.EXE user32.dll,UpdatePerUserSystemParameters
 
@@ -4447,17 +4447,17 @@ Windows Registry Editor Version 5.00
 "MouseThreshold2"="0"
 "MouseSensitivity"="10"
 "SmoothMouseXCurve"=hex:\
-	00,00,00,00,00,00,00,00,\
-	C0,CC,0C,00,00,00,00,00,\
-	80,99,19,00,00,00,00,00,\
-	40,66,26,00,00,00,00,00,\
-	00,33,33,00,00,00,00,00
+    00,00,00,00,00,00,00,00,\
+    C0,CC,0C,00,00,00,00,00,\
+    80,99,19,00,00,00,00,00,\
+    40,66,26,00,00,00,00,00,\
+    00,33,33,00,00,00,00,00
 "SmoothMouseYCurve"=hex:\
-	00,00,00,00,00,00,00,00,\
-	00,00,38,00,00,00,00,00,\
-	00,00,70,00,00,00,00,00,\
-	00,00,A8,00,00,00,00,00,\
-	00,00,E0,00,00,00,00,00
+    00,00,00,00,00,00,00,00,\
+    00,00,38,00,00,00,00,00,\
+    00,00,70,00,00,00,00,00,\
+    00,00,A8,00,00,00,00,00,\
+    00,00,E0,00,00,00,00,00
 
 ; SYSTEM AND SECURITY
 ; set appearance options to custom
@@ -4963,13 +4963,13 @@ Windows Registry Editor Version 5.00
                 # Import registry file silently
                 Regedit.exe /S "$env:TEMP\Optimize_User_Registry.reg"
 
-   	# Set Wallpaper
-	reg.exe delete "HKEY_CURRENT_USER\Control Panel\Desktop" /v Wallpaper /f
-	reg.exe add "HKEY_CURRENT_USER\Control Panel\Desktop" /v Wallpaper /t REG_SZ /d "" /f
-	reg.exe delete "HKEY_CURRENT_USER\Control Panel\Colors" /v Background /f
-	reg.exe add "HKEY_CURRENT_USER\Control Panel\Colors" /v Background /t REG_SZ /d "0 0 0" /f
-	
-	# Notify the system of the change
+    # Set Wallpaper
+    reg.exe delete "HKEY_CURRENT_USER\Control Panel\Desktop" /v Wallpaper /f
+    reg.exe add "HKEY_CURRENT_USER\Control Panel\Desktop" /v Wallpaper /t REG_SZ /d "" /f
+    reg.exe delete "HKEY_CURRENT_USER\Control Panel\Colors" /v Background /f
+    reg.exe add "HKEY_CURRENT_USER\Control Panel\Colors" /v Background /t REG_SZ /d "0 0 0" /f
+    
+    # Notify the system of the change
     rundll32.exe user32.dll, UpdatePerUserSystemParameters
 
     # Update the XAML TextBlock with the success message
@@ -5078,16 +5078,16 @@ $xamlWindow.ShowDialog()
     <File path="C:\Users\Default\AppData\Local\Microsoft\Windows\Shell\LayoutModification.xml">
       <![CDATA[
 <LayoutModificationTemplate Version="1" xmlns="http://schemas.microsoft.com/Start/2014/LayoutModification">
-	<LayoutOptions StartTileGroupCellWidth="6" />
-	<DefaultLayoutOverride>
-		<StartLayoutCollection>
-			<StartLayout GroupCellWidth="6" xmlns="http://schemas.microsoft.com/Start/2014/FullDefaultLayout" />
-		</StartLayoutCollection>
-	</DefaultLayoutOverride>
+    <LayoutOptions StartTileGroupCellWidth="6" />
+    <DefaultLayoutOverride>
+        <StartLayoutCollection>
+            <StartLayout GroupCellWidth="6" xmlns="http://schemas.microsoft.com/Start/2014/FullDefaultLayout" />
+        </StartLayoutCollection>
+    </DefaultLayoutOverride>
 </LayoutModificationTemplate>
-		]]>
+        ]]>
     </File>
-	<File path="C:\Windows\Setup\Scripts\CreateCppHpp.bat">
+    <File path="C:\Windows\Setup\Scripts\CreateCppHpp.bat">
       <![CDATA[
 @echo off
 :: Ask for the base file name
@@ -5106,9 +5106,9 @@ echo struct %filename% {
 echo.
 echo };
 ) &gt; &quot;%filename%.hpp&quot;
-		]]>
+        ]]>
     </File>
-	<File path="C:\Windows\Setup\Scripts\SoftwareInstaller.ps1">
+    <File path="C:\Windows\Setup\Scripts\SoftwareInstaller.ps1">
       <![CDATA[
 # Define the full software map
 # Add yEd asap
@@ -5124,7 +5124,7 @@ $fullSoftwareMap = @{
     "Crystal_Disk_Info"  = "CrystalDewWorld.CrystalDiskInfo"
     "Defraggler"         = "Piriform.Defraggler"
     "Firefox"            = "Mozilla.Firefox"
-	"Flameshot"          = "Flameshot.Flameshot"
+    "Flameshot"          = "Flameshot.Flameshot"
     "GIMP"               = "GIMP.GIMP"
     "Git"                = "Git.Git"
     "GitHub_Desktop"     = "GitHub.GitHubDesktop"
@@ -5161,7 +5161,7 @@ $fullSoftwareMap = @{
     "VirtualBox"         = "Oracle.VirtualBox"
     "Visual_Studio_2022" = "Microsoft.VisualStudio.2022.Community"
     "WinDirStat"         = "WinDirStat.WinDirStat"
-	"Windhawk"           = "RamenSoftware.Windhawk"
+    "Windhawk"           = "RamenSoftware.Windhawk"
     "WinSCP"             = "WinSCP.WinSCP"
     "qBittorrent"        = "qBittorrent.qBittorrent.Qt6"
 }
@@ -5270,7 +5270,7 @@ foreach ($key in $softwareMap) {
         if ($key -eq "Visual_Studio_2022") {
             $result = winget install -e --scope machine --accept-package-agreements --accept-source-agreements --source winget --id $value --custom --norestart
         } elseif ($key -eq "Git") {
-			$result = winget install -e --scope machine --accept-package-agreements --accept-source-agreements --source winget --id $value --interactive
+            $result = winget install -e --scope machine --accept-package-agreements --accept-source-agreements --source winget --id $value --interactive
         } else {
             $result = winget install -e --scope machine --accept-package-agreements --accept-source-agreements --source winget --id $value
         }
@@ -5316,9 +5316,9 @@ foreach ($key in $softwareMap.Keys) {
 
 Read-Host "Press Enter key to continue"
 Exit
-		]]>
+        ]]>
     </File>
-	<File path="C:\Windows\Setup\Scripts\SoftwareInstallerGUI.ps1">
+    <File path="C:\Windows\Setup\Scripts\SoftwareInstallerGUI.ps1">
       <![CDATA[
 # Check if script is running as Administrator
 If (!([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole]"Administrator")) {
@@ -5433,7 +5433,7 @@ $xaml = @"
                     <CheckBox x:Name="crystal"     Content="Crystal Disk Info"            />
                     <CheckBox x:Name="defraggler"  Content="Deffragler"                   />
                     <CheckBox x:Name="firefox"     Content="Firefox"                      />
-					<CheckBox x:Name="flameshot"   Content="Flameshot Screenshot Utility" />
+                    <CheckBox x:Name="flameshot"   Content="Flameshot Screenshot Utility" />
                     <CheckBox x:Name="gimp"        Content="GIMP"                         />
                     <CheckBox x:Name="git"         Content="Git"                          />
                     <CheckBox x:Name="ghdesktop"   Content="GitHub Desktop"               />
@@ -5580,7 +5580,7 @@ $checkboxes=@{
     "Crystal_Disk_Info"  = $xamlWindow.FindName("crystal")
     "Defraggler"         = $xamlWindow.FindName("defraggler")
     "Firefox"            = $xamlWindow.FindName("firefox")
-	"Flameshot"          = $xamlWindow.FindName("flameshot")
+    "Flameshot"          = $xamlWindow.FindName("flameshot")
     "GIMP"               = $xamlWindow.FindName("gimp")
     "Git"                = $xamlWindow.FindName("git")
     "GitHub_Desktop"     = $xamlWindow.FindName("ghdesktop")
@@ -5618,7 +5618,7 @@ $checkboxes=@{
     "VirtualBox"         = $xamlWindow.FindName("virtualbox")
     "Visual_Studio_2022" = $xamlWindow.FindName("vs2022")
     "WinDirStat"         = $xamlWindow.FindName("windirstat")
-	"Windhawk"           = $xamlWindow.FindName("windhawk")
+    "Windhawk"           = $xamlWindow.FindName("windhawk")
     "WinSCP"             = $xamlWindow.FindName("winscp")
     "qBittorrent"        = $xamlWindow.FindName("torrent")
 };
@@ -5634,14 +5634,14 @@ $xamlWindow.FindName("Minimal").Add_Click({
         $checkboxes[$key].IsChecked = $false
     }
     $checkboxes["7zip"].IsChecked = $true
-	$checkboxes["Defraggler"].IsChecked = $true
-	$checkboxes["Gow"].IsChecked = $true
+    $checkboxes["Defraggler"].IsChecked = $true
+    $checkboxes["Gow"].IsChecked = $true
     $checkboxes["Firefox"].IsChecked = $true
     $checkboxes["Notepad++"].IsChecked = $true
-	$checkboxes["Paint.net"].IsChecked = $true
+    $checkboxes["Paint.net"].IsChecked = $true
     $checkboxes["Putty"].IsChecked = $true
-	$checkboxes["Python3.13"].IsChecked = $true
-	$checkboxes["SpaceSniffer"].IsChecked = $true
+    $checkboxes["Python3.13"].IsChecked = $true
+    $checkboxes["SpaceSniffer"].IsChecked = $true
 })
 
 $xamlWindow.FindName("Full").Add_Click({
@@ -5651,10 +5651,10 @@ $xamlWindow.FindName("Full").Add_Click({
     $checkboxes["7zip"].IsChecked = $true
     $checkboxes["AHK"].IsChecked = $true
     $checkboxes["CMake"].IsChecked = $true
-	$checkboxes["Defraggler"].IsChecked = $true
-	$checkboxes["Gow"].IsChecked = $true
-	$checkboxes["Firefox"].IsChecked = $true
-	$checkboxes["Flameshot"].IsChecked = $true
+    $checkboxes["Defraggler"].IsChecked = $true
+    $checkboxes["Gow"].IsChecked = $true
+    $checkboxes["Firefox"].IsChecked = $true
+    $checkboxes["Flameshot"].IsChecked = $true
     $checkboxes["GIMP"].IsChecked = $true
     $checkboxes["Git"].IsChecked = $true
     $checkboxes["HWInfo"].IsChecked = $true
@@ -5664,9 +5664,9 @@ $xamlWindow.FindName("Full").Add_Click({
     $checkboxes["Paint.net"].IsChecked = $true
     $checkboxes["Putty"].IsChecked = $true
     $checkboxes["PowerToys"].IsChecked = $true
-	$checkboxes["Python3.13"].IsChecked = $true
+    $checkboxes["Python3.13"].IsChecked = $true
     $checkboxes["Skype"].IsChecked = $true
-	$checkboxes["SpaceSniffer"].IsChecked = $true
+    $checkboxes["SpaceSniffer"].IsChecked = $true
     $checkboxes["VSCode"].IsChecked = $true
 })
 
@@ -5715,9 +5715,9 @@ $xamlWindow.FindName("InstallButton").Add_Click({
 })
 # Show the Window
 $xamlWindow.ShowDialog()
-		]]>
+        ]]>
     </File>
-	<File path="C:\Windows\Setup\Scripts\TidyContextMenu.reg">
+    <File path="C:\Windows\Setup\Scripts\TidyContextMenu.reg">
       <![CDATA[
 Windows Registry Editor Version 5.00
 [-HKEY_CLASSES_ROOT\Directory\background\shell\AnyCode]
@@ -5728,20 +5728,20 @@ Windows Registry Editor Version 5.00
 
 [-HKEY_CLASSES_ROOT\Directory\shell\git_gui]
 [-HKEY_CLASSES_ROOT\Directory\shell\git_shell]
-		]]>
+        ]]>
     </File>
-	<File path="C:\Windows\Setup\Scripts\ApplyNilesoftConfig.ps1">
+    <File path="C:\Windows\Setup\Scripts\ApplyNilesoftConfig.ps1">
       <![CDATA[
 $destinationDirectory = "C:\Program Files\Nilesoft Shell"
 Copy-item -Path C:\Windows\Setup\Resources\Nilesoft_Shell\* -Destination $destinationDirectory -Recurse -Force
 regedit /S C:\Windows\Setup\Scripts\TidyContextMenu.reg
-		]]>
+        ]]>
     </File>
-	<File path="C:\Windows\Setup\Scripts\ApplyWindhawkConfig.ps1">
+    <File path="C:\Windows\Setup\Scripts\ApplyWindhawkConfig.ps1">
       <![CDATA[
 Copy-item C:\Windows\Setup\Resources\Windhawk\* -Destination C:\ProgramData\Windhawk -Recurse -Force
 regedit /S C:\Windows\Setup\Resources\Windhawk\WinhawkSettings.reg
-		]]>
+        ]]>
     </File>
   </Extensions>
 </unattend>
