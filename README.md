@@ -135,4 +135,5 @@ Yes, all via winget 😏 you have the option to select which. Don't like some? D
 >   ```
 >   * You may need to restart Windhawk
   * **WinSCP (FTP Client)**
+  * **WizTree (WinDirStat but fast)**
   * **Zettlr (Markdown Editor)**

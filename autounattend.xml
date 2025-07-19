@@ -5163,6 +5163,7 @@ $fullSoftwareMap = @{
     "WinDirStat"               = "WinDirStat.WinDirStat"
     "Windhawk"                 = "RamenSoftware.Windhawk"
     "WinSCP"                   = "WinSCP.WinSCP"
+    "Wiztree"                  = "AntibodySoftware.WizTree"
     "Zettlr"                   = "Zettlr.Zettlr"
 }
 
@@ -5427,7 +5428,7 @@ $xaml = @"
                 <StackPanel Grid.Column="0">
                     <CheckBox x:Name="sevenzip"           Content="7zip"                          />
                     <CheckBox x:Name="ahk"                Content="Auto HotKey"                   />
-                    <CheckBox x:Name="battlenet"          Content="Battle.net "                   />
+                    <CheckBox x:Name="battlenet"          Content="Battle.net"                    />
                     <CheckBox x:Name="blender"            Content="Blender"                       />
                     <CheckBox x:Name="cmake"              Content="CMake"                         />
                     <CheckBox x:Name="crystal"            Content="Crystal Disk Info"             />
@@ -5466,11 +5467,11 @@ $xaml = @"
                     <CheckBox x:Name="rainmeter"          Content="Rainmeter"                     />
                     <CheckBox x:Name="renderdoc"          Content="RenderDoc"                     />
                     <CheckBox x:Name="runescape"          Content="Runescape 3"                   />
-                    <CheckBox x:Name="screenbox"          Content="Screenbox                      />
+                    <CheckBox x:Name="screenbox"          Content="Screenbox"                     />
                 </StackPanel>
                 <StackPanel Grid.Column="2">
-                	<CheckBox x:Name="sourcetree"         Content="Sourcetree"                    />
-                	<CheckBox x:Name="Spicetify"          Content="Spicetify (Spotify Themer)"    />
+                    <CheckBox x:Name="sourcetree"         Content="Sourcetree"                    />
+                    <CheckBox x:Name="spicetify"          Content="Spicetify (Spotify Themer)"    />
                     <CheckBox x:Name="spotify"            Content="Spotify"                       />
                     <CheckBox x:Name="steam"              Content="Steam"                         />
                     <CheckBox x:Name="sucrosewpengine"    Content="Sucrose Wallpaper Engine"      />
@@ -5481,9 +5482,8 @@ $xaml = @"
                     <CheckBox x:Name="windirstat"         Content="WinDirStat"                    />
                     <CheckBox x:Name="windhawk"           Content="Windhawk (W11 Mod Utility)"    />
                     <CheckBox x:Name="winscp"             Content="WinSCP (FTP Client)"           />
+                    <CheckBox x:Name="wiztree"            Content="WizTree (WinDirStat but fast)" />
                     <CheckBox x:Name="zettlr"             Content="Zettlr (Markdown Editor)"      />
-                    <CheckBox IsEnabled="False">Reserved</CheckBox>
-                    <CheckBox IsEnabled="False">Reserved</CheckBox>
                     <CheckBox IsEnabled="False">Reserved</CheckBox>
                     <CheckBox IsEnabled="False">Reserved</CheckBox>
                     <CheckBox IsEnabled="False">Reserved</CheckBox>
@@ -5624,6 +5624,7 @@ $checkboxes=@{
     "WinDirStat"               = $xamlWindow.FindName("windirstat")
     "Windhawk"                 = $xamlWindow.FindName("windhawk")
     "WinSCP"                   = $xamlWindow.FindName("winscp")
+    "WizTree"                  = $xamlWindow.FindName("wiztree")
     "Zettlr"                   = $xamlWindow.FindName("zettlr")
 };
 
@@ -5638,40 +5639,71 @@ $xamlWindow.FindName("Minimal").Add_Click({
         $checkboxes[$key].IsChecked = $false
     }
     $checkboxes["7zip"].IsChecked = $true
-    $checkboxes["Defraggler"].IsChecked = $true
-    $checkboxes["Gow"].IsChecked = $true
-    $checkboxes["Firefox"].IsChecked = $true
-    $checkboxes["Notepad++"].IsChecked = $true
-    $checkboxes["Paint.net"].IsChecked = $true
-    $checkboxes["Putty"].IsChecked = $true
-    $checkboxes["Python3.13"].IsChecked = $true
-    $checkboxes["SpaceSniffer"].IsChecked = $true
+    $checkboxes["Crystal_Disk_Info"].IsChecked = $true
+    $checkboxes["Flameshot"].IsChecked = $true
+    $checkboxes["GIMP"].IsChecked = $true
+    $checkboxes["Google_Chrome"].IsChecked = $true
+    $checkboxes["HWInfo"].IsChecked = $true
+    $checkboxes["NeoFetch"].IsChecked = $true
+    $checkboxes["NotePad++"].IsChecked = $true
+    $checkboxes["Python_3.13"].IsChecked = $true
+    $checkboxes["UniGetUI"].IsChecked = $true
+    $checkboxes["WizTree"].IsChecked = $true
 })
 
 $xamlWindow.FindName("Full").Add_Click({
     foreach ($key in $checkboxes.Keys) {
         $checkboxes[$key].IsChecked = $false
     }
-    $checkboxes["7zip"].IsChecked = $true
     $checkboxes["AHK"].IsChecked = $true
+    $checkboxes["Battle.net"].IsChecked = $true
+    $checkboxes["Blender"].IsChecked = $true
     $checkboxes["CMake"].IsChecked = $true
-    $checkboxes["Defraggler"].IsChecked = $true
-    $checkboxes["Gow"].IsChecked = $true
-    $checkboxes["Firefox"].IsChecked = $true
+    $checkboxes["Crystal_Disk_Info"].IsChecked = $true
+    $checkboxes["Discord"].IsChecked = $true
+    $checkboxes["EarTrumpet"].IsChecked = $true
     $checkboxes["Flameshot"].IsChecked = $true
+    $checkboxes["Flawless_Widescreen"].IsChecked = $true
+    $checkboxes["Flow_Launcher"].IsChecked = $true
     $checkboxes["GIMP"].IsChecked = $true
     $checkboxes["Git"].IsChecked = $true
+    $checkboxes["Github_Desktop"].IsChecked = $true
+    $checkboxes["Google_Drive"].IsChecked = $true
+    $checkboxes["HiBit_Uninstaller"].IsChecked = $true
     $checkboxes["HWInfo"].IsChecked = $true
-    $checkboxes["LibreOffice"].IsChecked = $true
+    $checkboxes["ImageGlass"].IsChecked = $true
+    $checkboxes["LibreWolf"].IsChecked = $true
+    $checkboxes["Microsoft_Office"].IsChecked = $true
+    $checkboxes["Modern_Flyouts"].IsChecked = $true
+    $checkboxes["NanaZip"].IsChecked = $true
     $checkboxes["Neofetch"].IsChecked = $true
+    $checkboxes["Nilesoft_Shell"].IsChecked = $true
     $checkboxes["Notepad++"].IsChecked = $true
+    $checkboxes["OBS_Studio"].IsChecked = $true
+    $checkboxes["Oracle_VM_Virtual_Box"].IsChecked = $true
     $checkboxes["Paint.net"].IsChecked = $true
-    $checkboxes["Putty"].IsChecked = $true
+    $checkboxes["PDFgear"].IsChecked = $true
     $checkboxes["PowerToys"].IsChecked = $true
-    $checkboxes["Python3.13"].IsChecked = $true
-    $checkboxes["Skype"].IsChecked = $true
-    $checkboxes["SpaceSniffer"].IsChecked = $true
-    $checkboxes["VSCode"].IsChecked = $true
+    $checkboxes["Putty"].IsChecked = $true
+    $checkboxes["Python_3.13"].IsChecked = $true
+    $checkboxes["qBittorrent"].IsChecked = $true
+    $checkboxes["Rainmeter"].IsChecked = $true
+    $checkboxes["RenderDoc"].IsChecked = $true
+    $checkboxes["Runescape_3"].IsChecked = $true
+    $checkboxes["Screenbox"].IsChecked = $true
+    $checkboxes["Sourcetree"].IsChecked = $true
+    $checkboxes["Spicetify"].IsChecked = $true
+    $checkboxes["Spotify"].IsChecked = $true
+    $checkboxes["Steam"].IsChecked = $true
+    $checkboxes["Sucrose_Wallpaper_Engine"].IsChecked = $true
+    $checkboxes["TcNo_Account_Switcher"].IsChecked = $true
+    $checkboxes["TeraCopy"].IsChecked = $true
+    $checkboxes["UniGetUI"].IsChecked = $true
+    $checkboxes["Visual_Studio_2022"].IsChecked = $true
+    $checkboxes["Windhawk"].IsChecked = $true
+    $checkboxes["WinSCP"].IsChecked = $true
+    $checkboxes["WizTree"].IsChecked = $true
+    $checkboxes["Zettlr"].IsChecked = $true
 })
 
 $xamlWindow.FindName("All").Add_Click({
