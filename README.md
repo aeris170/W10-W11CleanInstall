@@ -52,26 +52,28 @@ Yes, all via winget 😏 you have the option to select which. Don't like some? D
   * **Battle.net**
   * **Blender**
   * **CMake**
+  * **Crystal Disk Info**
   * **Discord**
-  * **FanControl**
+  * **EarTrumpet**
+  * **Filelight**
   * **Flameshot**
   * **Flawless Widescreen**
+  * **Flow Launcher**
   * **GIMP**
   * **Git**
 > [!NOTE]  
 > Git will be installed in "interactive mode". Make sure to have your "favourite" text editor installed.
   * **GitHub Desktop**
+  * **Google Chrome**
   * **Google Drive**
   * **HiBit Uninstaller**
   * **HWiNFO**
-  * **Runescape**
-  * **K-Lite Codec Pack Mega**
-> [!CAUTION]
-> K-Lite Codec Pack gives out a warning if it can't find GPU drivers. You may have performance issues. Please install your GPU driver before installing K-Lite Codec Pack!! This warning is invisible during silent installation through winget, but it's still there!
-  * **Libre Office**
+  * **ImageGlass (Image Viewer)**
   * **LibreWolf**
   * **Line 6 Central**
-  * **Microsoft Teams**
+  * **Microsoft Office**
+  * **Modern Flyouts**
+  * **NanaZip (7zip modern UI fork)**
   * **Neofetch**
   * **Nilesoft Shell**
 > [!IMPORTANT]
@@ -92,28 +94,27 @@ Yes, all via winget 😏 you have the option to select which. Don't like some? D
 > 
 >  * You will need to Ctrl+Rightlick Desktop to apply changes
   * **Notepad++**
-  * **NVCleanstall**
-  * **Paint.net**
+  * **OBS Studio**
+  * **Oracle VM Virtual Box**
+  * **Paint.NET**
+  * **PDFgear**
   * **PowerToys**
   * **PuTTY (SSH Client)**
-  * **qBittorrent (Qt6)**
+  * **Python 3.13**
+  * **qBittorrent**
   * **Rainmeter**
-  * **Razer Synapse 3**
   * **RenderDoc**
-  * **Signal**
-  * **Skype**
-  * **Slack**
+  * **Runescape 3**
+  * **Screenbox**
   * **Sourcetree**
+  * **Spicetify (Spotify Themer)**
   * **Spotify**
   * **Steam**
-  * **SteelSeries GG**
-  * **Stream Deck**
+  * **Sucrose Wallpaper Engine**
   * **TcNo Account Switcher**
-  * **Teracopy**
-  * **Thunderbird**
-  * **Tor Browser**
+  * **TeraCopy**
+  * **UniGetUI (Winget UI)**
   * **Visual Studio 2022**
-  * **Oracle VM Virtual Box**
   * **WinDirStat**
   * **Windhawk**
 > [!TIP]
@@ -134,3 +135,4 @@ Yes, all via winget 😏 you have the option to select which. Don't like some? D
 >   ```
 >   * You may need to restart Windhawk
   * **WinSCP (FTP Client)**
+  * **Zettlr (Markdown Editor)**

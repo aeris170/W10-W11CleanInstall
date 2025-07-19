@@ -5110,60 +5110,60 @@ echo };
     </File>
     <File path="C:\Windows\Setup\Scripts\SoftwareInstaller.ps1">
       <![CDATA[
-# Define the full software map
-# Add yEd asap
-# Add tdm-gcc asap
 $fullSoftwareMap = @{
-    "7zip"               = "7zip.7zip"
-    "AHK"                = "AutoHotkey.AutoHotkey"
-    "Blender"            = "BlenderFoundation.Blender"
-    "Brave"              = "Brave.Brave"
-    "CLion"              = "JetBrains.CLion"
-    "CMake"              = "Kitware.CMake"
-    "Cppcheck"           = "Cppcheck.Cppcheck"
-    "Crystal_Disk_Info"  = "CrystalDewWorld.CrystalDiskInfo"
-    "Defraggler"         = "Piriform.Defraggler"
-    "Firefox"            = "Mozilla.Firefox"
-    "Flameshot"          = "Flameshot.Flameshot"
-    "GIMP"               = "GIMP.GIMP"
-    "Git"                = "Git.Git"
-    "GitHub_Desktop"     = "GitHub.GitHubDesktop"
-    "Google_Chrome"      = "Google.Chrome"
-    "Gow"                = "bmatzelle.Gow"
-    "HWInfo"             = "REALiX.HWiNFO"
-    "Inkscape"           = "Inkscape.Inkscape"
-    "JPEGView"           = "sylikc.JPEGView"
-    "K-Lite_Codec"       = "CodecGuide.K-LiteCodecPack.Mega"
-    "LICEcap"            = "Cockos.LICEcap"
-    "LibreOffice"        = "TheDocumentFoundation.LibreOffice"
-    "LibreWolf"          = "LibreWolf.LibreWolf"
-    "Lightshot"          = "Skillbrains.Lightshot"
-    "MSOffice"           = "Microsoft.Office"
-    "MSTeams"            = "Microsoft.Teams"
-    "Meld"               = "Meld.Meld"
-    "Neofetch"           = "nepnep.neofetch-win"
-    "Notepad++"          = "Notepad++.Notepad++"
-    "OBS_Studio"         = "OBSProject.OBSStudio"
-    "Paint.net"          = "dotPDN.PaintDotNet"
-    "PowerToys"          = "Microsoft.PowerToys"
-    "Putty"              = "PuTTY.PuTTY"
-    "Python3.13"         = "Python.Python.3.13"
-    "RenderDoc"          = "BaldurKarlsson.RenderDoc"
-    "SMPlayer"           = "SMPlayer.SMPlayer"
-    "Skype"              = "Microsoft.Skype"
-    "Sourcetree"         = "Atlassian.Sourcetree"
-    "SpaceSniffer"       = "UderzoSoftware.SpaceSniffer"
-    "Spotify"            = "Spotify.Spotify"
-    "TeraCopy"           = "CodeSector.TeraCopy"
-    "Thunderbird"        = "Mozilla.Thunderbird"
-    "Tor"                = "TorProject.TorBrowser"
-    "VSCode"             = "Microsoft.VisualStudioCode"
-    "VirtualBox"         = "Oracle.VirtualBox"
-    "Visual_Studio_2022" = "Microsoft.VisualStudio.2022.Community"
-    "WinDirStat"         = "WinDirStat.WinDirStat"
-    "Windhawk"           = "RamenSoftware.Windhawk"
-    "WinSCP"             = "WinSCP.WinSCP"
-    "qBittorrent"        = "qBittorrent.qBittorrent.Qt6"
+    "7zip"                     = "7zip.7zip"
+    "AHK"                      = "AutoHotkey.AutoHotkey"
+    "Battle.net"               = "Blizzard.BattleNet"
+    "Blender"                  = "BlenderFoundation.Blender"
+    "CMake"                    = "Kitware.CMake"
+    "Crystal_Disk_Info"        = "CrystalDewWorld.CrystalDiskInfo"
+    "Discord"                  = "Discord.Discord"
+    "EarTrumpet"               = "File-New-Project.EarTrumpet"
+    "Filelight"                = "KDE.Filelight"
+    "Flameshot"                = "Flameshot.Flameshot"
+    "Flawless_Widescreen"      = "FlawlessWidescreen.FlawlessWidescreen"
+    "Flow_Launcher"            = "Flow-Launcher.Flow-Launcher"
+    "GIMP"                     = "GIMP.GIMP.3"
+    "Git"                      = "Git.Git"
+    "GitHub_Desktop"           = "GitHub.GitHubDesktop"
+    "Google_Chrome"            = "Google.Chrome"
+    "Google_Drive"             = "Google.GoogleDrive"
+    "HiBit_Uninstaller"        = "HiBitSoftware.HiBitUninstaller"
+    "HWInfo"                   = "REALiX.HWiNFO"
+    "ImageGlass"               = "DuongDieuPhap.ImageGlass"
+    "LibreWolf"                = "LibreWolf.LibreWolf"
+    "Line6_Central"            = "Line6.Line6Central"
+    "Microsoft_Office"         = "office"
+    "Modern_Flyouts"           = "ModernFlyouts.ModernFlyouts"
+    "NanaZip"                  = "M2Team.NanaZip"
+    "NeoFetch"                 = "nepnep.neofetch-win"
+    "NileSoft_Shell"           = "Nilesoft.Shell"
+    "NotePad++"                = "Notepad++.Notepad++"
+    "OBS_Studio"               = "OBSProject.OBSStudio"
+    "Oracle_VM_Virtual_Box"    = "Oracle.VirtualBox"
+    "Paint.NET"                = "dotPDN.PaintDotNet"
+    "PDFgear"                  = "PDFgear.PDFgear"
+    "PowerToys"                = "Microsoft.PowerToys"
+    "Putty"                    = "PuTTY.PuTTY"
+    "Python_3.13"              = "Python.Python.3.13"
+    "qBittorrent"              = "qBittorrent.qBittorrent"
+    "Rainmeter"                = "Rainmeter.Rainmeter"
+    "RenderDoc"                = "BaldurKarlsson.RenderDoc"
+    "Runescape_3"              = "Jagex.Runescape"
+    "Screenbox"                = "Starpine.Screenbox"
+    "Sourcetree"               = "Atlassian.Sourcetree"
+    "Spicetify"                = "Spicetify.Spicetify"
+    "Spotify"                  = "Spotify.Spotify"
+    "Steam"                    = "Valve.Steam"
+    "Sucrose_Wallpaper_Engine" = "Taiizor.SucroseWallpaperEngine"
+    "TcNo_Account_Switcher"    = "TechNobo.TcNoAccountSwitcher"
+    "TeraCopy"                 = "CodeSector.TeraCopy"
+    "UniGetUI"                 = "MartiCliment.UniGetUI"
+    "Visual_Studio_2022"       = "Microsoft.VisualStudio.2022.Community"
+    "WinDirStat"               = "WinDirStat.WinDirStat"
+    "Windhawk"                 = "RamenSoftware.Windhawk"
+    "WinSCP"                   = "WinSCP.WinSCP"
+    "Zettlr"                   = "Zettlr.Zettlr"
 }
 
 $maxKeyLengthFullMap = ($fullSoftwareMap.Keys | ForEach-Object { $_.Length }) | Measure-Object -Maximum | Select-Object -ExpandProperty Maximum
@@ -5425,63 +5425,63 @@ $xaml = @"
                     <ColumnDefinition Width="250"/>
                 </Grid.ColumnDefinitions>
                 <StackPanel Grid.Column="0">
-                    <CheckBox x:Name="sevenzip"    Content="7zip"                         />
-                    <CheckBox x:Name="ahk"         Content="Auto HotKey"                  />
-                    <CheckBox x:Name="blender"     Content="Blender"                      />
-                    <CheckBox x:Name="brave"       Content="Brave Browser"                />
-                    <CheckBox x:Name="cmake"       Content="CMake"                        />
-                    <CheckBox x:Name="crystal"     Content="Crystal Disk Info"            />
-                    <CheckBox x:Name="defraggler"  Content="Deffragler"                   />
-                    <CheckBox x:Name="firefox"     Content="Firefox"                      />
-                    <CheckBox x:Name="flameshot"   Content="Flameshot Screenshot Utility" />
-                    <CheckBox x:Name="gimp"        Content="GIMP"                         />
-                    <CheckBox x:Name="git"         Content="Git"                          />
-                    <CheckBox x:Name="ghdesktop"   Content="GitHub Desktop"               />
-                    <CheckBox x:Name="chrome"      Content="Google Chrome"                />
-                    <CheckBox x:Name="gow"         Content="Gow (GNU on windows)"         />
-                    <CheckBox x:Name="hwinfo"      Content="HWInfo"                       />
-                    <CheckBox x:Name="inkscape"    Content="Inkscape"                     />
-                    <CheckBox x:Name="clion"       Content="JetBrains CLion"              />
-                    <CheckBox x:Name="jpegview"    Content="JPEGView"                     />
-                    <CheckBox x:Name="licecap"     Content="LICEcap"                      />
-                    <CheckBox x:Name="klite"       Content="K-Lite Codec Pack Mega"       />
+                    <CheckBox x:Name="sevenzip"           Content="7zip"                          />
+                    <CheckBox x:Name="ahk"                Content="Auto HotKey"                   />
+                    <CheckBox x:Name="battlenet"          Content="Battle.net "                   />
+                    <CheckBox x:Name="blender"            Content="Blender"                       />
+                    <CheckBox x:Name="cmake"              Content="CMake"                         />
+                    <CheckBox x:Name="crystal"            Content="Crystal Disk Info"             />
+                    <CheckBox x:Name="discord"            Content="Discord"                       />
+                    <CheckBox x:Name="eartrumpet"         Content="EarTrumpet"                    />
+                    <CheckBox x:Name="filelight"          Content="Filelight"                     />
+                    <CheckBox x:Name="flameshot"          Content="Flameshot Screenshot Utility"  />
+                    <CheckBox x:Name="flawlesswidescreen" Content="Flawless Widescreen"           />
+                    <CheckBox x:Name="flowlauncher"       Content="Flow Launcher"                 />
+                    <CheckBox x:Name="gimp"               Content="GIMP"                          />
+                    <CheckBox x:Name="git"                Content="Git"                           />
+                    <CheckBox x:Name="ghdesktop"          Content="GitHub Desktop"                />
+                    <CheckBox x:Name="chrome"             Content="Google Chrome"                 />
+                    <CheckBox x:Name="googledrive"        Content="Google Drive"                  />
+                    <CheckBox x:Name="hibituninst"        Content="HiBit Uninstaller"             />
+                    <CheckBox x:Name="hwinfo"             Content="HWInfo"                        />
+                    <CheckBox x:Name="imageglass"         Content="ImageGlass (Image Viewer)"     />
                 </StackPanel>
                 <StackPanel Grid.Column="1">
-                    <CheckBox x:Name="libreoffice" Content="Libre Office"                   />
-                    <CheckBox x:Name="librewolf"    Content="LibreWolf (FireFox + Privacy)" />
-                    <CheckBox x:Name="lightshot"    Content="LightShot ScreenShot Utility"  />
-                    <CheckBox x:Name="office"       Content="Microsoft Office"              />
-                    <CheckBox x:Name="teams"        Content="Microsoft Teams"               />
-                    <CheckBox x:Name="meld"         Content="Meld"                          />
-                    <CheckBox x:Name="neofetch"     Content="NeoFetch"                      />
-                    <CheckBox x:Name="npp"          Content="NotePad++"                     />
-                    <CheckBox x:Name="obs"          Content="OBS Studio"                    />
-                    <CheckBox x:Name="paintnet"     Content="Paint.NET"                     />
-                    <CheckBox x:Name="powertoys"    Content="PowerToys"                     />
-                    <CheckBox x:Name="putty"        Content="Putty (SSH Client)"            />
-                    <CheckBox x:Name="python"       Content="Python 3.13"                   />
-                    <CheckBox x:Name="renderdoc"    Content="RenderDoc"                     />
-                    <CheckBox x:Name="smplayer"     Content="SMPlayer"                      />
-                    <CheckBox x:Name="skype"        Content="Skype"                         />
-                    <CheckBox x:Name="sourcetree"   Content="Sourcetree"                    />
-                    <CheckBox x:Name="spacesniffer" Content="SpaceSniffer"                  />
-                    <CheckBox x:Name="spotify"      Content="Spotify"                       />
-                    <CheckBox x:Name="teracopy"     Content="TeraCopy"                      />
+                    <CheckBox x:Name="librewolf"          Content="LibreWolf (FireFox + Privacy)" />
+                    <CheckBox x:Name="line6central"       Content="Line6 Central"                 />
+                    <CheckBox x:Name="office"             Content="Microsoft Office"              />
+                    <CheckBox x:Name="modernflyouts"      Content="Modern Flyouts"                />
+                    <CheckBox x:Name="nanazip"            Content="NanaZip (7zip modern UI fork)" />
+                    <CheckBox x:Name="neofetch"           Content="NeoFetch"                      />
+                    <CheckBox x:Name="nilesoftshell"      Content="NileSoft Shell"                />
+                    <CheckBox x:Name="npp"                Content="NotePad++"                     />
+                    <CheckBox x:Name="obs"                Content="OBS Studio"                    />
+                    <CheckBox x:Name="virtualbox"         Content="Oracle VM Virtual Box"         />
+                    <CheckBox x:Name="paintnet"           Content="Paint.NET"                     />
+                    <CheckBox x:Name="pdfgear"            Content="PDFgear"                       />
+                    <CheckBox x:Name="powertoys"          Content="PowerToys"                     />
+                    <CheckBox x:Name="putty"              Content="Putty (SSH Client)"            />
+                    <CheckBox x:Name="python"             Content="Python 3.13"                   />
+                    <CheckBox x:Name="torrent"            Content="qBittorrent"                   />
+                    <CheckBox x:Name="rainmeter"          Content="Rainmeter"                     />
+                    <CheckBox x:Name="renderdoc"          Content="RenderDoc"                     />
+                    <CheckBox x:Name="runescape"          Content="Runescape 3"                   />
+                    <CheckBox x:Name="screenbox"          Content="Screenbox                      />
                 </StackPanel>
                 <StackPanel Grid.Column="2">
-                    <CheckBox x:Name="thunderbird"  Content="Thunderbird"              />
-                    <CheckBox x:Name="tor"        Content="Tor Browser"                />
-                    <CheckBox x:Name="code"       Content="Visual Studio Code"         />
-                    <CheckBox x:Name="virtualbox" Content="Oracle VM Virtual Box"      />
-                    <CheckBox x:Name="vs2022"     Content="Visual Studio 2022"         />
-                    <CheckBox x:Name="windirstat" Content="WinDirStat"                 />
-                    <CheckBox x:Name="windhawk"   Content="Windhawk (W11 Mod Utility)" />
-                    <CheckBox x:Name="winscp"     Content="WinSCP (FTP Client)"        />
-                    <CheckBox x:Name="torrent"    Content="qBittorrent"                />
-                    <CheckBox IsEnabled="False">Reserved</CheckBox>
-                    <CheckBox IsEnabled="False">Reserved</CheckBox>
-                    <CheckBox IsEnabled="False">Reserved</CheckBox>
-                    <CheckBox IsEnabled="False">Reserved</CheckBox>
+                	<CheckBox x:Name="sourcetree"         Content="Sourcetree"                    />
+                	<CheckBox x:Name="Spicetify"          Content="Spicetify (Spotify Themer)"    />
+                    <CheckBox x:Name="spotify"            Content="Spotify"                       />
+                    <CheckBox x:Name="steam"              Content="Steam"                         />
+                    <CheckBox x:Name="sucrosewpengine"    Content="Sucrose Wallpaper Engine"      />
+                    <CheckBox x:Name="tcnoaccount"        Content="TcNo Account Switcher"         />
+                    <CheckBox x:Name="teracopy"           Content="TeraCopy"                      />
+                    <CheckBox x:Name="unigetui"           Content="UniGetUI (Winget UI)"          />
+                    <CheckBox x:Name="vs2022"             Content="Visual Studio 2022"            />
+                    <CheckBox x:Name="windirstat"         Content="WinDirStat"                    />
+                    <CheckBox x:Name="windhawk"           Content="Windhawk (W11 Mod Utility)"    />
+                    <CheckBox x:Name="winscp"             Content="WinSCP (FTP Client)"           />
+                    <CheckBox x:Name="zettlr"             Content="Zettlr (Markdown Editor)"      />
                     <CheckBox IsEnabled="False">Reserved</CheckBox>
                     <CheckBox IsEnabled="False">Reserved</CheckBox>
                     <CheckBox IsEnabled="False">Reserved</CheckBox>
@@ -5572,55 +5572,59 @@ Add-Type -AssemblyName PresentationFramework
 $xamlWindow = [Windows.Markup.XamlReader]::Load((New-Object System.Xml.XmlNodeReader $xamlParsed))
 
 $checkboxes=@{
-    "7zip"               = $xamlWindow.FindName("sevenzip")
-    "AHK"                = $xamlWindow.FindName("ahk")
-    "Blender"            = $xamlWindow.FindName("blender")
-    "Brave"              = $xamlWindow.FindName("brave")
-    "CMake"              = $xamlWindow.FindName("cmake")
-    "Crystal_Disk_Info"  = $xamlWindow.FindName("crystal")
-    "Defraggler"         = $xamlWindow.FindName("defraggler")
-    "Firefox"            = $xamlWindow.FindName("firefox")
-    "Flameshot"          = $xamlWindow.FindName("flameshot")
-    "GIMP"               = $xamlWindow.FindName("gimp")
-    "Git"                = $xamlWindow.FindName("git")
-    "GitHub_Desktop"     = $xamlWindow.FindName("ghdesktop")
-    "Google_Chrome"      = $xamlWindow.FindName("chrome")
-    "Gow"                = $xamlWindow.FindName("gow")
-    "HWInfo"             = $xamlWindow.FindName("hwinfo")
-    "Inkscape"           = $xamlWindow.FindName("inkscape")
-    "CLion"              = $xamlWindow.FindName("clion")
-    "JPEGView"           = $xamlWindow.FindName("jpegview")
-    "LICEcap"            = $xamlWindow.FindName("licecap")
-    "K-Lite_Codec"       = $xamlWindow.FindName("klite")
-    "LibreOffice"        = $xamlWindow.FindName("libreoffice")
-    "LibreWolf"          = $xamlWindow.FindName("librewolf")
-    "LightShot"          = $xamlWindow.FindName("lightshot")
-    "MSOffice"           = $xamlWindow.FindName("office")
-    "MSTeams"            = $xamlWindow.FindName("teams")
-    "Meld"               = $xamlWindow.FindName("meld")
-    "NeoFetch"           = $xamlWindow.FindName("neofetch")
-    "NotePad++"          = $xamlWindow.FindName("npp")
-    "OBS_Studio"         = $xamlWindow.FindName("obs")
-    "Paint.net"          = $xamlWindow.FindName("paintnet")
-    "PowerToys"          = $xamlWindow.FindName("powertoys")
-    "Putty"              = $xamlWindow.FindName("putty")
-    "Python3.13"         = $xamlWindow.FindName("python")
-    "RenderDoc"          = $xamlWindow.FindName("renderdoc")
-    "SMPlayer"           = $xamlWindow.FindName("smplayer")
-    "Skype"              = $xamlWindow.FindName("skype")
-    "Sourcetree"         = $xamlWindow.FindName("sourcetree")
-    "SpaceSniffer"       = $xamlWindow.FindName("spacesniffer")
-    "Spotify"            = $xamlWindow.FindName("spotify")
-    "TeraCopy"           = $xamlWindow.FindName("teracopy")
-    "Thunderbird"        = $xamlWindow.FindName("thunderbird")
-    "Tor"                = $xamlWindow.FindName("tor")
-    "VSCode"             = $xamlWindow.FindName("code")
-    "VirtualBox"         = $xamlWindow.FindName("virtualbox")
-    "Visual_Studio_2022" = $xamlWindow.FindName("vs2022")
-    "WinDirStat"         = $xamlWindow.FindName("windirstat")
-    "Windhawk"           = $xamlWindow.FindName("windhawk")
-    "WinSCP"             = $xamlWindow.FindName("winscp")
-    "qBittorrent"        = $xamlWindow.FindName("torrent")
+    "7zip"                     = $xamlWindow.FindName("sevenzip")
+    "AHK"                      = $xamlWindow.FindName("ahk")
+    "Battle.net"               = $xamlWindow.FindName("battlenet")
+    "Blender"                  = $xamlWindow.FindName("blender")
+    "CMake"                    = $xamlWindow.FindName("cmake")
+    "Crystal_Disk_Info"        = $xamlWindow.FindName("crystal")
+    "Discord"                  = $xamlWindow.FindName("discord")
+    "EarTrumpet"               = $xamlWindow.FindName("eartrumpet")
+    "Filelight"                = $xamlWindow.FindName("filelight")
+    "Flameshot"                = $xamlWindow.FindName("flameshot")
+    "Flawless_Widescreen"      = $xamlWindow.FindName("flawlesswidescreen")
+    "Flow_Launcher"            = $xamlWindow.FindName("flowlauncher")
+    "GIMP"                     = $xamlWindow.FindName("gimp")
+    "Git"                      = $xamlWindow.FindName("git")
+    "GitHub_Desktop"           = $xamlWindow.FindName("ghdesktop")
+    "Google_Chrome"            = $xamlWindow.FindName("chrome")
+    "Google_Drive"             = $xamlWindow.FindName("googledrive")
+    "HiBit_Uninstaller"        = $xamlWindow.FindName("hibituninst")
+    "HWInfo"                   = $xamlWindow.FindName("hwinfo")
+    "ImageGlass"               = $xamlWindow.FindName("imageglass")
+    "LibreWolf"                = $xamlWindow.FindName("librewolf")
+    "Line6_Central"            = $xamlWindow.FindName("line6central")
+    "Microsoft_Office"         = $xamlWindow.FindName("office")
+    "Modern_Flyouts"           = $xamlWindow.FindName("modernflyouts")
+    "NanaZip"                  = $xamlWindow.FindName("nanazip")
+    "NeoFetch"                 = $xamlWindow.FindName("neofetch")
+    "NileSoft_Shell"           = $xamlWindow.FindName("nilesoftshell")
+    "NotePad++"                = $xamlWindow.FindName("npp")
+    "OBS_Studio"               = $xamlWindow.FindName("obs")
+    "Oracle_VM_Virtual_Box"    = $xamlWindow.FindName("virtualbox")
+    "Paint.NET"                = $xamlWindow.FindName("paintnet")
+    "PDFgear"                  = $xamlWindow.FindName("pdfgear")
+    "PowerToys"                = $xamlWindow.FindName("powertoys")
+    "Putty"                    = $xamlWindow.FindName("putty")
+    "Python_3.13"              = $xamlWindow.FindName("python")
+    "qBittorrent"              = $xamlWindow.FindName("torrent")
+    "Rainmeter"                = $xamlWindow.FindName("rainmeter")
+    "RenderDoc"                = $xamlWindow.FindName("renderdoc")
+    "Runescape_3"              = $xamlWindow.FindName("runescape")
+    "Screenbox"                = $xamlWindow.FindName("screenbox")
+    "Sourcetree"               = $xamlWindow.FindName("sourcetree")
+    "Spicetify"                = $xamlWindow.FindName("spicetify")
+    "Spotify"                  = $xamlWindow.FindName("spotify")
+    "Steam"                    = $xamlWindow.FindName("steam")
+    "Sucrose_Wallpaper_Engine" = $xamlWindow.FindName("sucrosewpengine")
+    "TcNo_Account_Switcher"    = $xamlWindow.FindName("tcnoaccount")
+    "TeraCopy"                 = $xamlWindow.FindName("teracopy")
+    "UniGetUI"                 = $xamlWindow.FindName("unigetui")
+    "Visual_Studio_2022"       = $xamlWindow.FindName("vs2022")
+    "WinDirStat"               = $xamlWindow.FindName("windirstat")
+    "Windhawk"                 = $xamlWindow.FindName("windhawk")
+    "WinSCP"                   = $xamlWindow.FindName("winscp")
+    "Zettlr"                   = $xamlWindow.FindName("zettlr")
 };
 
 $xamlWindow.FindName("None").Add_Click({
