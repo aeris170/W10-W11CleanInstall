@@ -4105,9 +4105,9 @@ $shortcut.Description = "Install Software"
 $shortcut.Save()
 
 # Set the "Run as administrator" flag in the shortcut file using native methods
-$bytes = [System.IO.File]::ReadAllBytes($shortcutPath)
-$bytes[21] = 34 # 0x22 (34 in decimal) sets the RunAs flag
-[System.IO.File]::WriteAllBytes($shortcutPath, $bytes)
+# $bytes = [System.IO.File]::ReadAllBytes($shortcutPath)
+# $bytes[21] = 34 # 0x22 (34 in decimal) sets the RunAs flag
+# [System.IO.File]::WriteAllBytes($shortcutPath, $bytes)
 # Install Software
       ]]>
     </File>
@@ -5118,7 +5118,7 @@ $fullSoftwareMap = @{
     "CMake"                    = "Kitware.CMake"
     "Crystal_Disk_Info"        = "CrystalDewWorld.CrystalDiskInfo"
     "Discord"                  = "Discord.Discord"
-    "EarTrumpet"               = "File-New-Project.EarTrumpet"
+    "EarTrumpet"               = "9NBLGGH516XP" #"File-New-Project.EarTrumpet"
     "Filelight"                = "KDE.Filelight"
     "Flameshot"                = "Flameshot.Flameshot"
     "Flawless_Widescreen"      = "FlawlessWidescreen.FlawlessWidescreen"
@@ -5133,7 +5133,7 @@ $fullSoftwareMap = @{
     "ImageGlass"               = "DuongDieuPhap.ImageGlass"
     "LibreWolf"                = "LibreWolf.LibreWolf"
     "Line6_Central"            = "Line6.Line6Central"
-    "Microsoft_Office"         = "office"
+    "Microsoft_Office"         = "Microsoft.Office"
     "Modern_Flyouts"           = "ModernFlyouts.ModernFlyouts"
     "NanaZip"                  = "M2Team.NanaZip"
     "NeoFetch"                 = "nepnep.neofetch-win"
@@ -5150,7 +5150,7 @@ $fullSoftwareMap = @{
     "Rainmeter"                = "Rainmeter.Rainmeter"
     "RenderDoc"                = "BaldurKarlsson.RenderDoc"
     "Runescape_3"              = "Jagex.Runescape"
-    "Screenbox"                = "Starpine.Screenbox"
+    "Screenbox"                = "9NTSNMSVCB5L" #"Starpine.Screenbox"
     "Sourcetree"               = "Atlassian.Sourcetree"
     "Spicetify"                = "Spicetify.Spicetify"
     "Spotify"                  = "Spotify.Spotify"
@@ -5172,7 +5172,7 @@ $maxKeyLengthFullMap = ($fullSoftwareMap.Keys | ForEach-Object { $_.Length }) | 
 if ($args[0] -eq "--help") {
     Write-Host
     Write-Host "Usage .\Software software1 software2"
-    Write-Host "Example: .\Software VSCode Skype 7zip" -ForegroundColor Yellow
+    Write-Host "Example: .\Software 7zip AHK Blender" -ForegroundColor Yellow
     Write-Host "Softwares available to install - use left side as keys:"
     foreach ($key in $fullSoftwareMap.Keys) {
         $value = $fullSoftwareMap[$key]
@@ -5252,6 +5252,12 @@ Read-Host
 
 $softwareMap = $softwareMap | sort
 
+# Remove and re-add git at the end so the user can install their programs and then install Git, for configuration.
+$softwareMap = $softwareMap | Where-Object { $_ -ne "Git" }
+if ($args -contains "Git") {
+    $softwareMap += "Git"
+}
+
 # Iterate through the map and display all key-value pairs
 foreach ($key in $softwareMap) {
     $value = $fullSoftwareMap[$key]
@@ -5269,11 +5275,13 @@ foreach ($key in $softwareMap) {
 
     Try {
         if ($key -eq "Visual_Studio_2022") {
-            $result = winget install -e --scope machine --accept-package-agreements --accept-source-agreements --source winget --id $value --custom --norestart
+            $result = winget install -e --accept-package-agreements --accept-source-agreements --source winget --id $value --custom --norestart
         } elseif ($key -eq "Git") {
-            $result = winget install -e --scope machine --accept-package-agreements --accept-source-agreements --source winget --id $value --interactive
+            $result = winget install -e --accept-package-agreements --accept-source-agreements --source winget --id $value --interactive
+        } elseif ($key -eq "Battle.net") {
+			$result = winget install -e --accept-package-agreements --accept-source-agreements --source winget --id $value --silent --location "C:\Program Files (x86)\Battle.net"
         } else {
-            $result = winget install -e --scope machine --accept-package-agreements --accept-source-agreements --source winget --id $value
+            $result = winget install -e --accept-package-agreements --accept-source-agreements --source winget --id $value
         }
         if (-Not ($result -Match "fail")) {
             $installedPackages += $key
@@ -5321,17 +5329,7 @@ Exit
     </File>
     <File path="C:\Windows\Setup\Scripts\SoftwareInstallerGUI.ps1">
       <![CDATA[
-# Check if script is running as Administrator
-If (!([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole]"Administrator")) {
-    Try {
-        Start-Process PowerShell.exe -ArgumentList ("-NoProfile -ExecutionPolicy Bypass -File `"{0}`"" -f $PSCommandPath) -Verb RunAs
-        Exit
-    } Catch {
-        Write-Host "Failed to run as Administrator. Please rerun with elevated privileges."
-        Exit
-    }
-}
-
+Write-Host "Software Installer GUI by aeris170. Close this window to close the GUI window."
 # Define the XAML UI as a string
 $xaml = @"
 <Window xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
