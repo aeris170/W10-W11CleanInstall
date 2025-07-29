@@ -1,0 +1,1 @@
+Delete "remove" after Refresh icon cache.bat file name
