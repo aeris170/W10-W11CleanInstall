@@ -4046,7 +4046,7 @@ if (Test-Path -Path $markerFilePath) {
     Disable-ScheduledTasks
     Set-ServiceStartup
     # Power Settings
-    Set-RecommendedPowerSettings
+    # Set-RecommendedPowerSettings # We no longer do this. High idle CPU clock speeds.
     # Delete Edge
     Delete-Edge
     exit
