@@ -1,0 +1,5 @@
+{
+  "title": "About Windows 11 Debloated",
+  "firstline": "Microsoft Windows 11 Debloated by aeris170",
+  "otherstuff": ""
+}

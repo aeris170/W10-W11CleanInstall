@@ -1,0 +1,16 @@
+{
+  "controlStyles[0].target": "Taskbar.ExperienceToggleButton#LaunchListButton[AutomationProperties.AutomationId=StartButton] > Taskbar.TaskListButtonPanel@CommonStates > Border#BackgroundElement",
+  "controlStyles[0].styles[0]": "Background@InactiveNormal:=<ImageBrush Stretch=\"None\" ImageSource=\"C:\\Windows\\Setup\\Resources\\Icons\\StartButton\\RibbonYellowIdle.png\" />",
+  "controlStyles[0].styles[1]": "Background@InactivePointerOver:=<ImageBrush Stretch=\"None\" ImageSource=\"C:\\Windows\\Setup\\Resources\\Icons\\StartButton\\RibbonYellowHover.png\" />",
+  "controlStyles[0].styles[2]": "Background@InactivePressed:=<ImageBrush Stretch=\"None\" ImageSource=\"C:\\Windows\\Setup\\Resources\\Icons\\StartButton\\RibbonYellowClicked.png\" />",
+  "controlStyles[0].styles[3]": "BorderThickness=0",
+  "controlStyles[0].styles[4]": "Background@ActiveNormal:=<ImageBrush Stretch=\"None\" ImageSource=\"C:\\Windows\\Setup\\Resources\\Icons\\StartButton\\RibbonYellowClicked.png\" />",
+  "controlStyles[0].styles[5]": "Background@ActivePointerOver:=<ImageBrush Stretch=\"None\" ImageSource=\"C:\\Windows\\Setup\\Resources\\Icons\\StartButton\\RibbonYellowHover.png\" />",
+  "controlStyles[0].styles[6]": "Background@ActivePressed:=<ImageBrush Stretch=\"None\" ImageSource=\"C:\\Windows\\Setup\\Resources\\Icons\\StartButton\\RibbonYellowClicked.png\" />",
+  "controlStyles[1].target": "Taskbar.ExperienceToggleButton#LaunchListButton[AutomationProperties.AutomationId=StartButton] > Taskbar.TaskListButtonPanel > Microsoft.UI.Xaml.Controls.AnimatedVisualPlayer#Icon",
+  "controlStyles[1].styles[0]": "Visibility=Collapsed",
+  "controlStyles[2].target": "Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel",
+  "controlStyles[2].styles[0]": "Padding=0,0,0,0",
+  "controlStyles[3].target": "Taskbar.TaskListLabeledButtonPanel@RunningIndicatorStates > Rectangle#RunningIndicator",
+  "controlStyles[3].styles[0]": "Fill@ActiveRunningIndicator=#ffcf48"
+}
