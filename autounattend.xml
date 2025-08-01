@@ -4298,6 +4298,11 @@ Try {
 Get-AppxPackage -Name 'Microsoft.Copilot' | Remove-AppxPackage
 Get-AppxPackage -Name 'Microsoft.Windows.Ai.Copilot.Provider' | Remove-AppxPackage
 
+# Uninstall Teams
+winget uninstall --id Microsoft.Teams
+winget uninstall --id Microsoft.Teams.Free
+winget uninstall --id Microsoft.Teams.Classic
+
 $MultilineComment = @"
 Windows Registry Editor Version 5.00
 
